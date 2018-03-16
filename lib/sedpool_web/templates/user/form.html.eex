@@ -20,12 +20,23 @@
       <div class="input-group">
       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
        <%= password_input f, :plain_password, class: "form-control" %>
-       <%= error_tag f, :password %>
+       <%= error_tag f, :plain_password %>
       </label>
       </div>
   </div>
 
   <div class="form-group">
-    <%= submit "Criar", class: "btn btn-primary" %>
+     <label>Confirme sua senha
+      <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+    <%= password_input f, :password_confirmation, class: "form-control" %>
+    <%= error_tag f, :password_confirmation %>
+     </label>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= submit "Salvar", class: "btn btn-primary" %>
   </div>
 <% end %>

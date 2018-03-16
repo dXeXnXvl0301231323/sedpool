@@ -18,7 +18,7 @@ defmodule SedpoolWeb.UserController do
     case Account.create_user(user_params) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "User created successfully.")
+        |> put_flash(:info, "Usuário criado com sucesso.")
         |> redirect(to: user_path(conn, :show, user))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule SedpoolWeb.UserController do
     case Account.update_user(user, user_params) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "User updated successfully.")
+        |> put_flash(:info, "Usuário atualizado com sucesso.")
         |> redirect(to: user_path(conn, :show, user))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", user: user, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule SedpoolWeb.UserController do
     {:ok, _user} = Account.delete_user(user)
 
     conn
-    |> put_flash(:info, "User deleted successfully.")
+    |> put_flash(:info, "Usuário excluído com sucesso.")
     |> redirect(to: user_path(conn, :index))
   end
 end

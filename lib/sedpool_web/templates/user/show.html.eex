@@ -1,4 +1,9 @@
-<h2>Show User</h2>
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+<h2 class="card-header">Monstrar Usuário</h2>
 
 <ul>
 
@@ -14,5 +19,9 @@
 
 </ul>
 
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+<span><%= link "Editar", to: user_path(@conn, :edit, @user) %></span>
+<span><%= link "Voltar", to: user_path(@conn, :index) %></span>
+  </div>
+ </div>
+</div>
+</center>

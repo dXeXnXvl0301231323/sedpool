@@ -1,5 +1,14 @@
-<h2>Edit User</h2>
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+<h2 class="card-header">Editar Usuário</h2>
 
 <%= render "form.html", Map.put(assigns, :action, user_path(@conn, :update, @user)) %>
 
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+<span><%= link "Voltar", to: user_path(@conn, :index) %></span>
+  </div>
+ </div>
+</div>
+</center>
