@@ -6,15 +6,23 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :email, class: "control-label" %>
+    <label>Email
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
     <%= text_input f, :email, class: "form-control" %>
     <%= error_tag f, :email %>
+    </label>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= label f, :password, "Senha", class: "control-label" %>
-    <%= password_input f, :plain_password, class: "form-control" %>
-    <%= error_tag f, :password %>
+     <label>Senha
+      <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+       <%= password_input f, :plain_password, class: "form-control" %>
+       <%= error_tag f, :password %>
+      </label>
+      </div>
   </div>
 
   <div class="form-group">
