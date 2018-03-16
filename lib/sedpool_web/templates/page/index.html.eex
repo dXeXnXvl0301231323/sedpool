@@ -1,6 +1,6 @@
 <div class="jumbotron">
 <center>
-  <h2><%= gettext "Bem vindo a %{name}!", name: "Tvtsrequest" %></h2>
+  <h2><%= gettext "Bem vindo a %{name}!", name: "Sedspool" %></h2>
   <p class="lead">Desenvolvido totalmente para facilitar<br />sua venda externa.</p>
 </div>
 

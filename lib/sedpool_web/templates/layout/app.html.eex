@@ -6,44 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SEDPOOL</title>
+    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <title>SEDSPOOL</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
+  <body background="https://s1.1zoom.ru/big3/129/347141-admin.jpg">
+        <%= render "_navbar.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
 
-  <body>
     <div class="container">
-      
-      <nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md my-3">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#containerNavbarCenter" aria-controls="containerNavbarCenter" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-center" id="containerNavbarCenter">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Pagina Inicial<span class="sr-only">(current)</span></a>
-            </li>
-            <%= if @current_user do %>
-              <li class="nav-item">
-                <span class="navbar-text">
-                  <%= @current_user.email %>
-                </span>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Sair</a>
-              </li>              
-            <% else %>
-              <li class="nav-item">
-			 <a class="nav-link" <%= link "Registre-se", to: user_path(@conn, :new) %> </a>
-              </li>
-              <li class="nav-item">
-		<a class="nav-link" <%= link "Login", to: session_path(@conn, :new), class: "btn btn-primary" %> </a>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
@@ -53,18 +25,7 @@
       </main>
 
     </div> <!-- /container -->
- 
-    <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
- 
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-  crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
+
