@@ -1,10 +1,10 @@
-<h1>Register</h1>
+<h1>Registro</h1>
 
 <%= form_for @changeset, "/register", fn f -> %>
   
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p>Opa, algo deu errado! Verifique os erros abaixo.</p>
     </div>
   <% end %>
 
@@ -15,13 +15,13 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :plain_password, "Password", class: "control-label" %>
+    <%= label f, :plain_password, "Senha", class: "control-label" %>
     <%= password_input f, :plain_password, class: "form-control" %>
     <%= error_tag f, :plain_password %>
   </div>
 
   <div class="form-group">
-    <%= submit "Register", class: "btn btn-primary" %>
+    <%= submit "Registrar", class: "btn btn-primary" %>
   </div>
 
 <% end %>

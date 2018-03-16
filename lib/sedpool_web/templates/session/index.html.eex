@@ -1,22 +1,40 @@
-<h1>Login</h1>
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+<h1 class="card-header">Login</h1>
 
 <form method="POST" action="/login">
 
     <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
+	</br>
+          <div class="form-group">
+            <label>Email
+              <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+		            <input type="email" name="email" class="form-control", autofocus: "on", placeholder: "Email" />
+	    </label>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label>Senha
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+	      <input type="password" name="plain_password" class="form-control" />
+	    </label>
+              </div>
+          </div>
+
 
     <div class="form-group">
-        <label>
-            Email
-            <input type="email" name="email" class="form-control" />
-        </label>
-    </div>
-    <div class="form-group">
-        <label>
-            Password
-            <input type="password" name="plain_password" class="form-control" />
-        </label>
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary">Login</button>
+        <button class="btn btn-primary">Entrar</button>
     </div>
 </form>
+	      <div class="card-footer text-muted">
+        Não tem uma conta ainda? <%= link "Registre-se", to: user_path(@conn, :new), class: "btn btn-outline-secondary btn-sm"%>
+              </div>
+    </div>
+  </div>
+</div>
