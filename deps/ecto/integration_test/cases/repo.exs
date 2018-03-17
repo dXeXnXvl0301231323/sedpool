@@ -265,7 +265,7 @@ defmodule Ecto.Integration.RepoTest do
       changeset
       |> Ecto.Changeset.unique_constraint(:uuid)
       |> TestRepo.insert()
-    assert changeset.errors == [uuid: {"has already been taken", []}]
+    assert changeset.errors == [uuid: {"já existe", []}]
     assert changeset.data.__meta__.state == :built
   end
 
@@ -282,7 +282,7 @@ defmodule Ecto.Integration.RepoTest do
       }
 
     [_, p2, _] = changeset.changes.posts
-    assert p2.errors == [uuid: {"has already been taken", []}]
+    assert p2.errors == [uuid: {"já existe", []}]
   end
 
   @tag :id_type
@@ -295,7 +295,7 @@ defmodule Ecto.Integration.RepoTest do
       changeset
       |> Ecto.Changeset.unique_constraint(:uuid)
       |> TestRepo.insert()
-    assert changeset.errors == [uuid: {"has already been taken", []}]
+    assert changeset.errors == [uuid: {"já existe", []}]
     assert changeset.data.__meta__.state == :built
   end
 
@@ -315,7 +315,7 @@ defmodule Ecto.Integration.RepoTest do
       |> TestRepo.update
 
     errors = Ecto.Changeset.traverse_errors(changeset, fn {msg, _opts} -> msg end)
-    assert errors == %{unique_users: [%{}, %{id: ["has already been taken"]}]}
+    assert errors == %{unique_users: [%{}, %{id: ["já existe"]}]}
     refute changeset.valid?
   end
 

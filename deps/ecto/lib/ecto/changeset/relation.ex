@@ -272,7 +272,7 @@ defmodule Ecto.Changeset.Relation do
     if is_map(acc_pk_values) and not missing_pks?(pk_values) and
        Map.has_key?(acc_pk_values, pk_values) do
       Enum.reduce(schema.__schema__(:primary_key), changeset, fn pk, acc ->
-        Changeset.add_error(acc, pk, "has already been taken")
+        Changeset.add_error(acc, pk, "já existe")
       end)
     else
       changeset

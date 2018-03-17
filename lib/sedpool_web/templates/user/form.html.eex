@@ -10,9 +10,9 @@
     <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
     <%= text_input f, :email, class: "form-control" %>
+    </div>
     <%= error_tag f, :email %>
     </label>
-    </div>
   </div>
 
   <div class="form-group">
@@ -20,9 +20,9 @@
       <div class="input-group">
       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
        <%= password_input f, :password, class: "form-control" %>
+       </div>
        <%= error_tag f, :password %>
       </label>
-      </div>
   </div>
 
   <div class="form-group">
@@ -30,9 +30,9 @@
       <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
     <%= password_input f, :password_confirmation, class: "form-control" %>
+      </div>
     <%= error_tag f, :password_confirmation %>
      </label>
-      </div>
   </div>
 
 

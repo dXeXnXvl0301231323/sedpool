@@ -71,7 +71,7 @@ defmodule Ecto.Changeset do
 
       changeset = User.changeset(%User{}, %{age: 42, email: "mary@example.com"})
       {:error, changeset} = Repo.insert(changeset)
-      changeset.errors #=> [email: {"has already been taken", []}]
+      changeset.errors #=> [email: {"já existe", []}]
 
   Validations and constraints define an explicit boundary when the check
   happens. By moving constraints to the database, we also provide a safe,
@@ -1835,7 +1835,7 @@ defmodule Ecto.Changeset do
   ## Options
 
     * `:message` - the message in case the constraint check fails,
-      defaults to "has already been taken"
+      defaults to "já existe"
     * `:name` - the constraint name. By default, the constraint
       name is inferred from the table + field. May be required
       explicitly for complex cases
@@ -1866,7 +1866,7 @@ defmodule Ecto.Changeset do
       Repo.insert!(%User{email: "john@elixir.org", company_id: 1})
       changeset = User.changeset(%User{}, %{email: "john@elixir.org", company_id: 1})
       {:error, changeset} = Repo.insert(changeset)
-      changeset.errors #=> [email: {"has already been taken", []}]
+      changeset.errors #=> [email: {"já existe", []}]
 
   Alternatively, you can give both `unique_index` and `unique_constraint`
   the same name:
@@ -1903,7 +1903,7 @@ defmodule Ecto.Changeset do
   @spec unique_constraint(t, atom, Keyword.t) :: t
   def unique_constraint(changeset, field, opts \\ []) do
     constraint = opts[:name] || "#{get_source(changeset)}_#{field}_index"
-    message    = message(opts, "has already been taken")
+    message    = message(opts, "já existe")
     match_type = Keyword.get(opts, :match, :exact)
     add_constraint(changeset, :unique, to_string(constraint), match_type, field, {message, []})
   end

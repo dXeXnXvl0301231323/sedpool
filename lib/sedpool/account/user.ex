@@ -21,9 +21,9 @@ defmodule Sedpool.Account.User do
   def changeset(%User{} = user, attrs) do
     user
     |> cast(attrs, @required_fields, @optional_fields)
-    |> validate_required([:email])
-    |> validate_format(:email, ~r/@/)
-    |> validate_length(:password, min: 6)
+    |> validate_required(:email)
+    |> validate_format(:email, ~r/@/, message: "E-mail incorreto!")
+    |> validate_length(:password, min: 6, message: "Senha inferior a 6 dígitos")
     |> validate_confirmation(:password, message: "Senha não confere!")
     |> unique_constraint(:email)
     |> encrypt_password
