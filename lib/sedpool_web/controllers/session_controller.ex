@@ -9,7 +9,7 @@ defmodule SedpoolWeb.SessionController do
 
   def create(conn, params) do
     user = Account.get_user_by_email! params["email"]
-    valid = Comeonin.Argon2.checkpw(params["plain_password"], user.password)
+    valid = Comeonin.Argon2.checkpw(params["password"], user.password)
 
     if valid do
       conn

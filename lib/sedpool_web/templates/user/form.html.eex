@@ -19,8 +19,8 @@
      <label>Senha
       <div class="input-group">
       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
-       <%= password_input f, :plain_password, class: "form-control" %>
-       <%= error_tag f, :plain_password %>
+       <%= password_input f, :password, class: "form-control" %>
+       <%= error_tag f, :password %>
       </label>
       </div>
   </div>

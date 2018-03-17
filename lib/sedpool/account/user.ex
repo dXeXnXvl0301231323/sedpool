@@ -6,15 +6,15 @@ defmodule Sedpool.Account.User do
 
   schema "users" do
     field :email, :string
-    field :password, :string
+    field :password_hash, :string
 	        # Virtual Fields #
-    field :plain_password, :string, virtual: true
+    field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
     timestamps()
   end
 
-        @required_fields ~w(email plain_password password_confirmation)
+        @required_fields ~w(email password)
         @optional_fields ~w()
 
   @doc false
@@ -23,17 +23,18 @@ defmodule Sedpool.Account.User do
     |> cast(attrs, @required_fields, @optional_fields)
     |> validate_required([:email])
     |> validate_format(:email, ~r/@/)
-    |> validate_length(:plain_password, min: 6)
+    |> validate_length(:password, min: 6)
+    |> validate_confirmation(:password, message: "Senha não confere!")
     |> unique_constraint(:email)
     |> encrypt_password
   end
 
   defp encrypt_password(changeset) do
-    plain_password = get_change(changeset, :plain_password)
+    password = get_change(changeset, :password)
 
-    if plain_password do
-      encrypted_password = Comeonin.Argon2.hashpwsalt(plain_password)
-      put_change(changeset, :password, encrypted_password)
+    if password do
+      encrypted_password = Comeonin.Argon2.hashpwsalt(password)
+      put_change(changeset, :password_hash, encrypted_password)
     else  
       changeset
     end
