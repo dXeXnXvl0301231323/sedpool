@@ -40,5 +40,4 @@ defmodule Sedpool.Account.User do
     end
   end
 
-
 end

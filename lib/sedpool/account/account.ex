@@ -103,4 +103,31 @@ defmodule Sedpool.Account do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+
+ def get_user_by_email(email), do: Repo.get_by(User, email: email)
+
+  def authenticate(%{"email" => email, "password" => password}) do
+    user = get_user_by_email(email)
+    case check_password(user, password) do
+      true -> {:ok, user}
+      _ -> {:error, "Invalid email/password combination."}
+    end
+  end
+  def authenticate(_), do: {:error, "Invalid email/password combination."}
+
+  defp check_password(user, password) do
+    case user do
+      nil -> Comeonin.Argon2.dummy_checkpw()
+      _ -> Comeonin.Argon2.checkpw(password, user.password_hash)
+    end
+  end
+
+
+
+
+
+
+
+
 end
