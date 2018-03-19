@@ -32,9 +32,10 @@
         <button class="btn btn-primary">Entrar</button>
     </div>
 </form>
-	      <div class="card-footer text-muted">
+<!--	      <div class="card-footer text-muted">
         Não tem uma conta ainda? <%= link "Registre-se", to: user_path(@conn, :new), class: "btn btn-outline-secondary btn-sm"%>
               </div>
+-->
     </div>
   </div>
 </div>

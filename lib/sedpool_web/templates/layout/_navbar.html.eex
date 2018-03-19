@@ -19,7 +19,7 @@
               </li>
             <% else %>
               <li class="nav-item">
-                         <a class="nav-link" <%= link "Registre-se", to: user_path(@conn, :new) %> </a>
+<!--		 <a class="nav-link" <%= link "Registre-se", to: user_path(@conn, :new) %> </a> -->
               </li>
               <li class="nav-item">
                 <a class="nav-link" <%= link "Login", to: session_path(@conn, :new), class: "btn btn-primary" %> </a>
