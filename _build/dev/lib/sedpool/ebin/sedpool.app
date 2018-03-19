@@ -14,6 +14,7 @@
                         'Elixir.Sedpool.Repo',
                         'Elixir.Sedpool.SedpoolErrorHandler',
                         'Elixir.SedpoolWeb','Elixir.SedpoolWeb.Endpoint',
+                        'Elixir.SedpoolWeb.ErrorController',
                         'Elixir.SedpoolWeb.ErrorHelpers',
                         'Elixir.SedpoolWeb.ErrorView',
                         'Elixir.SedpoolWeb.Gettext',
