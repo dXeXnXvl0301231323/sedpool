@@ -32,8 +32,8 @@ defmodule SedpoolWeb.Router do
     post "/login", SessionController, :create
     get "/logout", SessionController, :destroy
 
-    get "/register", RegistrationController, :new
-    post "/register", RegistrationController, :create
+#    get "/register", RegistrationController, :new
+#    post "/register", RegistrationController, :create
 #get "/*path", ErrorController, :index
   end
 
