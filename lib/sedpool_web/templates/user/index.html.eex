@@ -1,6 +1,6 @@
 <center>
-<div class="row">
-  <div class="col-md-6 offset-md-3">
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
     <div class="card">
 
 <h2 class="card-header">Lista de usuários</h2>
@@ -8,7 +8,10 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Nome</th>
+      <th>Usuário</th>
       <th>Email</th>
+      <th>Cod.Vend</th>
 
       <th></th>
     </tr>
@@ -16,7 +19,10 @@
   <tbody>
 <%= for user <- @users do %>
     <tr>
+      <td><%= user.nome %></td>
+      <td><%= user.username %></td>
       <td><%= user.email %></td>
+      <td><%= user.cod_vend %></td>
 
       <td class="text-right">
         <span><%= link "Monstrar", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>

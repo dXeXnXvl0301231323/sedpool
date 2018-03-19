@@ -26,7 +26,7 @@ defmodule SedpoolWeb.Router do
     pipe_through [:browser, :browser_session]
     get "/", PageController, :index
 
-#    resources "/users", UserController
+    resources "/users", UserController
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create
@@ -39,7 +39,7 @@ defmodule SedpoolWeb.Router do
 
   scope "/", SedpoolWeb do
     pipe_through [:browser, :browser_session, :ensure_auth]
-    resources "/users", UserController
+#    resources "/users", UserController
   end
  
   # Other scopes may use custom stacks.

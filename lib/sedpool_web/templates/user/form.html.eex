@@ -6,12 +6,42 @@
   <% end %>
 
   <div class="form-group">
+    <label>Nome
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <%= text_input f, :nome, class: "form-control" %>
+    </div>
+    <%= error_tag f, :nome %>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Usuário
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <%= text_input f, :username, class: "form-control" %>
+    </div>
+    <%= error_tag f, :username %>
+    </label>
+  </div>
+
+  <div class="form-group">
     <label>Email
     <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
     <%= text_input f, :email, class: "form-control" %>
     </div>
     <%= error_tag f, :email %>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Codigo Vendedor
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <%= text_input f, :cod_vend, class: "form-control" %>
+    </div>
+    <%= error_tag f, :cod_vend %>
     </label>
   </div>
 

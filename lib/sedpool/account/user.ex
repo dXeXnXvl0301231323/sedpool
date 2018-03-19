@@ -7,6 +7,9 @@ defmodule Sedpool.Account.User do
   schema "users" do
     field :email, :string
     field :password_hash, :string
+    field :nome, :string
+    field :username, :string
+    field :cod_vend, :string
 	        # Virtual Fields #
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
@@ -14,7 +17,7 @@ defmodule Sedpool.Account.User do
     timestamps()
   end
 
-        @required_fields ~w(email password)
+        @required_fields ~w(email nome username cod_vend password)
         @optional_fields ~w()
 
   @doc false

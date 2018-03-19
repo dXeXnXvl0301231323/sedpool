@@ -8,8 +8,23 @@
 <ul>
 
   <li>
+    <strong>Nome:</strong>
+    <%= @user.nome %>
+  </li>
+
+  <li>
+    <strong>Usuário:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
     <strong>Email:</strong>
     <%= @user.email %>
+  </li>
+
+  <li>
+    <strong>Codigo do Vendedor:</strong>
+    <%= @user.cod_vend %>
   </li>
 
   <li>
