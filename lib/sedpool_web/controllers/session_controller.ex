@@ -26,4 +26,5 @@ defmodule SedpoolWeb.SessionController do
     |> put_flash(:info, "Desconectado!")
     |> redirect(to: "/")
   end
+
 end

@@ -10,8 +10,12 @@ defmodule SedpoolWeb.Router do
   end
 
   pipeline :browser_session do
-    plug Sedpool.AuthAccessPipeline
+    plug Sedpool.SedpoolAccessPipeline
     plug Sedpool.Plug.SetCurrentUser
+  end
+
+  pipeline :ensure_auth do
+    plug Guardian.Plug.EnsureAuthenticated
   end
 
   pipeline :api do
@@ -22,7 +26,7 @@ defmodule SedpoolWeb.Router do
     pipe_through [:browser, :browser_session]
     get "/", PageController, :index
 
-    resources "/users", UserController
+#    resources "/users", UserController
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create
@@ -33,6 +37,11 @@ defmodule SedpoolWeb.Router do
 #get "/*path", ErrorController, :index
   end
 
+  scope "/", SedpoolWeb do
+    pipe_through [:browser, :browser_session, :ensure_auth]
+    resources "/users", UserController
+  end
+ 
   # Other scopes may use custom stacks.
   # scope "/api", SedpoolWeb do
   #   pipe_through :api
