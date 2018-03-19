@@ -30,7 +30,7 @@ defmodule SedpoolWeb.Router do
 
     get "/register", RegistrationController, :new
     post "/register", RegistrationController, :create
-get "/*path", ErrorController, :index
+#get "/*path", ErrorController, :index
   end
 
   # Other scopes may use custom stacks.

@@ -2,11 +2,13 @@ defmodule SedpoolWeb.ErrorView do
   use SedpoolWeb, :view
 
   def render("404.html", _assigns) do
-    "Page not found"
+	render "not_found.html", %{}
+#    "Page not found"
   end
 
   def render("500.html", _assigns) do
-    "Internal server error"
+	render "erro_internal.html", %{}
+#    "Internal server error"
   end
 
   # In case no render clause matches or no
