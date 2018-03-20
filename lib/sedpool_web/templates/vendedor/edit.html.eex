@@ -1,0 +1,16 @@
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+<h2 class="card-header">Editar Vendedor</h2>
+
+<%= render "form.html", Map.put(assigns, :action, vendedor_path(@conn, :update, @vendedor)) %>
+
+<span><%= link "Voltar", to: vendedor_path(@conn, :index) %></span>
+
+  </div>
+ </div>
+</div>
+</center>
+

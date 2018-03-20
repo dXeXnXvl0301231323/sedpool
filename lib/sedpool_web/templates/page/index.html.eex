@@ -12,10 +12,10 @@
         <a href="#">Cadastro de pedidos(Vendas)</a>
       </li>
       <li>
-        <a href="#">Cadastro de Cliente</a>
+        <a href="/users">Cadastro de Usuários</a>
       </li>
       <li>
-        <a href="#">Cadastro de Vendedor</a>
+        <a href="/vendedores">Cadastro de Vendedor</a>
       </li>
     </ul>
   </div>

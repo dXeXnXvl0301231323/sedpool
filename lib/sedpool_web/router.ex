@@ -27,6 +27,7 @@ defmodule SedpoolWeb.Router do
     get "/", PageController, :index
 
     resources "/users", UserController
+    resources "/vendedores", VendedorController
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create

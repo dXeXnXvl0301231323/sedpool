@@ -1,0 +1,40 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<h2 class="card-header">Lista Vendedores</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Codigo do Vendedor</th>
+      <th>Nome Vendedor</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for vendedor <- @vendedores do %>
+    <tr>
+      <td><%= vendedor.cod_vendedor %></td>
+      <td><%= vendedor.nome_vendedor %></td>
+
+      <td class="text-right">
+        <span><%= link "Monstrar", to: vendedor_path(@conn, :show, vendedor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: vendedor_path(@conn, :edit, vendedor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: vendedor_path(@conn, :delete, vendedor), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Vendedor", to: vendedor_path(@conn, :new) %></span>
+
+</div>
+</div>
+</div>
+</center>
+

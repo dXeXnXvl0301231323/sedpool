@@ -1,0 +1,30 @@
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+
+<h2 class="card-header">Mostrar Vendedor</h2>
+
+<ul>
+
+  <li>
+    <strong>Codigo do Vendedor:</strong>
+    <%= @vendedor.cod_vendedor %>
+  </li>
+
+  <li>
+    <strong>Nome do vendedor:</strong>
+    <%= @vendedor.nome_vendedor %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: vendedor_path(@conn, :edit, @vendedor) %></span>
+<span><%= link "Voltar", to: vendedor_path(@conn, :index) %></span>
+
+  </div>
+ </div>
+</div>
+</center>
+

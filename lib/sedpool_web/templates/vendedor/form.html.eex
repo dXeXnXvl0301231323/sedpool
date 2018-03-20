@@ -1,0 +1,31 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Opa, algo deu errado! Verifique os erros abaixo.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Codigo do Vendedor
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <%= text_input f, :cod_vendedor, class: "form-control" %>
+    </div>
+    <%= error_tag f, :cod_vendedor %>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Nome do Vendedor
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <%= text_input f, :nome_vendedor, class: "form-control" %>
+    </div>
+    <%= error_tag f, :nome_vendedor %>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>

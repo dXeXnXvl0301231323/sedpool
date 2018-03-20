@@ -8,13 +8,21 @@
               <a class="nav-link" href="/">Pagina Inicial<span class="sr-only">(current)</span></a>
             </li>
             <%= if @current_user do %>
+
               <li class="nav-item">
+                <span class="navbar-text">
+                  <%= link "Vendedores", to: vendedor_path(@conn, :index) %>
+                </span>
+              </li>
+
+             <li class="nav-item">
                 <span class="navbar-text">
                   <%= link "Usuários", to: user_path(@conn, :index) %>
                 </span>
               </li>
+
               <li class="nav-item">
-                <span class="navbar-text"><%= @current_user.email %></span>&ensp;
+                <span class="navbar-text"><%= @current_user.nome %></span>&ensp;
                 <a class="btn btn-secondary" <%= link "Sair", to: session_path(@conn, :destroy) %></a>
               </li>
             <% else %>

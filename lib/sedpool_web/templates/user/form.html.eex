@@ -8,13 +8,14 @@
   <div class="form-group">
     <label>Nome
     <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-    <%= text_input f, :nome, class: "form-control" %>
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+	    <%= text_input f, :nome, placeholder: "Nome", class: "form-control" %>
     </div>
     <%= error_tag f, :nome %>
     </label>
   </div>
 
+<!--
   <div class="form-group">
     <label>Usuário
     <div class="input-group">
@@ -24,22 +25,23 @@
     <%= error_tag f, :username %>
     </label>
   </div>
+-->
 
   <div class="form-group">
     <label>Email
     <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-    <%= text_input f, :email, class: "form-control" %>
+    <%= text_input f, :email, placeholder: "Email", class: "form-control" %>
     </div>
     <%= error_tag f, :email %>
     </label>
   </div>
 
   <div class="form-group">
-    <label>Codigo Vendedor
-    <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-    <%= text_input f, :cod_vend, class: "form-control" %>
+    <label>Codigo do Vendedor
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <%= select(f, :cod_vend, @vendedor) %>
     </div>
     <%= error_tag f, :cod_vend %>
     </label>
@@ -49,7 +51,7 @@
      <label>Senha
       <div class="input-group">
       <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
-       <%= password_input f, :password, class: "form-control" %>
+       <%= password_input f, :password, placeholder: "Maior que 6 dígitos", class: "form-control" %>
        </div>
        <%= error_tag f, :password %>
       </label>
@@ -59,7 +61,7 @@
      <label>Confirme sua senha
       <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
-    <%= password_input f, :password_confirmation, class: "form-control" %>
+    <%= password_input f, :password_confirmation, placeholder: "Maior que 6 dígitos", class: "form-control" %>
       </div>
     <%= error_tag f, :password_confirmation %>
      </label>

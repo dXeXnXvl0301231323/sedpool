@@ -130,4 +130,100 @@ defmodule Sedpool.Account do
 
 
 
+
+  alias Sedpool.Account.Vendedor
+
+  @doc """
+  Returns the list of vendedores.
+
+  ## Examples
+
+      iex> list_vendedores()
+      [%Vendedor{}, ...]
+
+  """
+  def list_vendedores do
+    Repo.all(Vendedor)
+  end
+
+  @doc """
+  Gets a single vendedor.
+
+  Raises `Ecto.NoResultsError` if the Vendedor does not exist.
+
+  ## Examples
+
+      iex> get_vendedor!(123)
+      %Vendedor{}
+
+      iex> get_vendedor!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_vendedor!(id), do: Repo.get!(Vendedor, id)
+
+  @doc """
+  Creates a vendedor.
+
+  ## Examples
+
+      iex> create_vendedor(%{field: value})
+      {:ok, %Vendedor{}}
+
+      iex> create_vendedor(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_vendedor(attrs \\ %{}) do
+    %Vendedor{}
+    |> Vendedor.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a vendedor.
+
+  ## Examples
+
+      iex> update_vendedor(vendedor, %{field: new_value})
+      {:ok, %Vendedor{}}
+
+      iex> update_vendedor(vendedor, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_vendedor(%Vendedor{} = vendedor, attrs) do
+    vendedor
+    |> Vendedor.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Vendedor.
+
+  ## Examples
+
+      iex> delete_vendedor(vendedor)
+      {:ok, %Vendedor{}}
+
+      iex> delete_vendedor(vendedor)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_vendedor(%Vendedor{} = vendedor) do
+    Repo.delete(vendedor)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking vendedor changes.
+
+  ## Examples
+
+      iex> change_vendedor(vendedor)
+      %Ecto.Changeset{source: %Vendedor{}}
+
+  """
+  def change_vendedor(%Vendedor{} = vendedor) do
+    Vendedor.changeset(vendedor, %{})
+  end
 end

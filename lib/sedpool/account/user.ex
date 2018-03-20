@@ -2,7 +2,7 @@ defmodule Sedpool.Account.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Sedpool.Account.User
-
+  alias Sedpool.Account.Vendedor
 
   schema "users" do
     field :email, :string
@@ -10,6 +10,8 @@ defmodule Sedpool.Account.User do
     field :nome, :string
     field :username, :string
     field :cod_vend, :string
+	has_many :vendedores, Sedpool.Account.Vendedor
+#	belongs_to :vendedor, Sedpool.Account.Vendedor
 	        # Virtual Fields #
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
@@ -17,7 +19,7 @@ defmodule Sedpool.Account.User do
     timestamps()
   end
 
-        @required_fields ~w(email nome username cod_vend password)
+        @required_fields ~w(email nome cod_vend password)
         @optional_fields ~w()
 
   @doc false
