@@ -1,21 +1,22 @@
-<center>
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <div class="card">
 
-<h2 class="card-header">Monstrar Usuário</h2>
+<center><h2 class="card-header">Monstrar Usuário</h2></center>
 
-<ul>
+ <ul>
 
   <li>
     <strong>Nome:</strong>
     <%= @user.nome %>
   </li>
 
+<!--
   <li>
     <strong>Usuário:</strong>
     <%= @user.username %>
   </li>
+-->
 
   <li>
     <strong>Email:</strong>
@@ -27,16 +28,16 @@
     <%= @user.cod_vend %>
   </li>
 
-  <li>
+  <li> 
     <strong>Password:</strong>
     <%= @user.password_hash %>
   </li>
 
 </ul>
-
+<center>
 <span><%= link "Editar", to: user_path(@conn, :edit, @user) %></span>
 <span><%= link "Voltar", to: user_path(@conn, :index) %></span>
+</center>
   </div>
  </div>
 </div>
-</center>

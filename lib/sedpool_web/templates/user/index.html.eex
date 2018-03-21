@@ -9,7 +9,7 @@
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Usuário</th>
+<!--      <th>Usuário</th> -->
       <th>Email</th>
       <th>Cod.Vend</th>
 
@@ -20,7 +20,7 @@
 <%= for user <- @users do %>
     <tr>
       <td><%= user.nome %></td>
-      <td><%= user.username %></td>
+<!--      <td><%= user.username %></td> -->
       <td><%= user.email %></td>
       <td><%= user.cod_vend %></td>
 
