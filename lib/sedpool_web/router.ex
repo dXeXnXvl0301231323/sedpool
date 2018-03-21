@@ -42,6 +42,9 @@ defmodule SedpoolWeb.Router do
   scope "/", SedpoolWeb do
     pipe_through [:browser, :browser_session, :ensure_auth]
 #    resources "/users", UserController
+#    resources "/vendedores", VendedorController
+#    resources "/produtos", ProdutoController
+
   end
  
   # Other scopes may use custom stacks.
