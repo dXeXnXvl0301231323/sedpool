@@ -1,0 +1,5 @@
+<h2>Editar Condição de Pagamento</h2>
+
+<%= render "form.html", Map.put(assigns, :action, condpag_path(@conn, :update, @condpag)) %>
+
+<span><%= link "Voltar", to: condpag_path(@conn, :index) %></span>

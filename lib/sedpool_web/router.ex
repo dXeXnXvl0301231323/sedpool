@@ -29,6 +29,9 @@ defmodule SedpoolWeb.Router do
     resources "/users", UserController
     resources "/vendedores", VendedorController
     resources "/produtos", ProdutoController
+    resources "/clientes", ClienteController
+    resources "/condpagamentos", CondpagController
+    resources "/tbprecos", TbprecoController
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create

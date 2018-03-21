@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor, verifique os erros abaixo.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :filial_tbpreco, class: "control-label" %>
+    <%= text_input f, :filial_tbpreco, class: "form-control" %>
+    <%= error_tag f, :filial_tbpreco %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :item_tbpreco, class: "control-label" %>
+    <%= text_input f, :item_tbpreco, class: "form-control" %>
+    <%= error_tag f, :item_tbpreco %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :codtabela_tbpreco, class: "control-label" %>
+    <%= text_input f, :codtabela_tbpreco, class: "form-control" %>
+    <%= error_tag f, :codtabela_tbpreco %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :codproduto_tbpreco, class: "control-label" %>
+    <%= text_input f, :codproduto_tbpreco, class: "form-control" %>
+    <%= error_tag f, :codproduto_tbpreco %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :precovenda_tbpreco, class: "control-label" %>
+    <%= text_input f, :precovenda_tbpreco, class: "form-control" %>
+    <%= error_tag f, :precovenda_tbpreco %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :valordesconto_tbpreco, class: "control-label" %>
+    <%= text_input f, :valordesconto_tbpreco, class: "form-control" %>
+    <%= error_tag f, :valordesconto_tbpreco %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>

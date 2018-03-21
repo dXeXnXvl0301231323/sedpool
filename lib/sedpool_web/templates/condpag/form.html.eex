@@ -1,0 +1,35 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor, verifique os erros abaixo.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :filial_condpagamento, class: "control-label" %>
+    <%= text_input f, :filial_condpagamento, class: "form-control" %>
+    <%= error_tag f, :filial_condpagamento %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :codigo_condpagamento, class: "control-label" %>
+    <%= text_input f, :codigo_condpagamento, class: "form-control" %>
+    <%= error_tag f, :codigo_condpagamento %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tipo_condpagamento, class: "control-label" %>
+    <%= text_input f, :tipo_condpagamento, class: "form-control" %>
+    <%= error_tag f, :tipo_condpagamento %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :descricao_condpagamento, class: "control-label" %>
+    <%= text_input f, :descricao_condpagamento, class: "form-control" %>
+    <%= error_tag f, :descricao_condpagamento %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>

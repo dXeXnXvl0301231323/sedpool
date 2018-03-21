@@ -1,0 +1,51 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+<h2 class="card-header">Monstrar Tabela de Preço</h2>
+
+<ul>
+
+  <li>
+    <strong>Filial tbpreco:</strong>
+    <%= @tbpreco.filial_tbpreco %>
+  </li>
+
+  <li>
+    <strong>Item tbpreco:</strong>
+    <%= @tbpreco.item_tbpreco %>
+  </li>
+
+  <li>
+    <strong>Codtabela tbpreco:</strong>
+    <%= @tbpreco.codtabela_tbpreco %>
+  </li>
+
+  <li>
+    <strong>Codproduto tbpreco:</strong>
+    <%= @tbpreco.codproduto_tbpreco %>
+  </li>
+
+  <li>
+    <strong>Precovenda tbpreco:</strong>
+    <%= @tbpreco.precovenda_tbpreco %>
+  </li>
+
+  <li>
+    <strong>Valordesconto tbpreco:</strong>
+    <%= @tbpreco.valordesconto_tbpreco %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: tbpreco_path(@conn, :edit, @tbpreco) %></span>
+<span><%= link "Voltar", to: tbpreco_path(@conn, :index) %></span>
+
+
+   </div>
+  </div>
+</div>
+</center>
+
+

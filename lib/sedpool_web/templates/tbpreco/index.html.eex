@@ -1,0 +1,47 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+<h2 class="card-header">Lista de Tabela de Preço</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Filial tbpreco</th>
+      <th>Item tbpreco</th>
+      <th>Codtabela tbpreco</th>
+      <th>Codproduto tbpreco</th>
+      <th>Precovenda tbpreco</th>
+      <th>Valordesconto tbpreco</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tbpreco <- @tbprecos do %>
+    <tr>
+      <td><%= tbpreco.filial_tbpreco %></td>
+      <td><%= tbpreco.item_tbpreco %></td>
+      <td><%= tbpreco.codtabela_tbpreco %></td>
+      <td><%= tbpreco.codproduto_tbpreco %></td>
+      <td><%= tbpreco.precovenda_tbpreco %></td>
+      <td><%= tbpreco.valordesconto_tbpreco %></td>
+
+      <td class="text-right">
+        <span><%= link "Monstrar", to: tbpreco_path(@conn, :show, tbpreco), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: tbpreco_path(@conn, :edit, tbpreco), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: tbpreco_path(@conn, :delete, tbpreco), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Tabela Preço", to: tbpreco_path(@conn, :new) %></span>
+
+   </div>
+  </div>
+</div>
+</center>
+

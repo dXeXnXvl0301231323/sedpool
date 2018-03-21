@@ -1,0 +1,40 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<h2 class="card-header">Monstrar Condição de Pagamento</h2>
+
+<ul>
+
+  <li>
+    <strong>Filial:</strong>
+    <%= @condpag.filial_condpagamento %>
+  </li>
+
+  <li>
+    <strong>Codigo:</strong>
+    <%= @condpag.codigo_condpagamento %>
+  </li>
+
+  <li>
+    <strong>Tipo:</strong>
+    <%= @condpag.tipo_condpagamento %>
+  </li>
+
+  <li>
+    <strong>Descricao:</strong>
+    <%= @condpag.descricao_condpagamento %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: condpag_path(@conn, :edit, @condpag) %></span>
+<span><%= link "Voltar", to: condpag_path(@conn, :index) %></span>
+
+</div>
+</div>
+</div>
+</center>
+

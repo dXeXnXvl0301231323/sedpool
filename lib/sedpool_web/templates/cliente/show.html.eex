@@ -1,0 +1,81 @@
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+
+<h2 class="card-header">Mostrar Cliente</h2>
+
+<ul>
+
+  <li>
+    <strong>Cod cliente:</strong>
+    <%= @cliente.cod_cliente %>
+  </li>
+
+  <li>
+    <strong>Nome cliente:</strong>
+    <%= @cliente.nome_cliente %>
+  </li>
+
+  <li>
+    <strong>Fantasia cliente:</strong>
+    <%= @cliente.fantasia_cliente %>
+  </li>
+
+  <li>
+    <strong>Cnpj cliente:</strong>
+    <%= @cliente.cnpj_cliente %>
+  </li>
+
+  <li>
+    <strong>Endereco cliente:</strong>
+    <%= @cliente.endereco_cliente %>
+  </li>
+
+  <li>
+    <strong>Vendedor cliente:</strong>
+    <%= @cliente.vendedor_cliente %>
+  </li>
+
+  <li>
+    <strong>Tipo cliente:</strong>
+    <%= @cliente.tipo_cliente %>
+  </li>
+
+  <li>
+    <strong>Tbpreco cliente:</strong>
+    <%= @cliente.tbpreco_cliente %>
+  </li>
+
+  <li>
+    <strong>Pais cliente:</strong>
+    <%= @cliente.pais_cliente %>
+  </li>
+
+  <li>
+    <strong>Estado cliente:</strong>
+    <%= @cliente.estado_cliente %>
+  </li>
+
+  <li>
+    <strong>Cod municipio cliente:</strong>
+    <%= @cliente.cod_municipio_cliente %>
+  </li>
+
+  <li>
+    <strong>Municipio cliente:</strong>
+    <%= @cliente.municipio_cliente %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: cliente_path(@conn, :edit, @cliente) %></span>
+<span><%= link "Voltar", to: cliente_path(@conn, :index) %></span>
+
+  </div>
+ </div>
+</div>
+</center>
+
+

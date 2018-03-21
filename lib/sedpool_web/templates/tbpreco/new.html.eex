@@ -1,0 +1,16 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+<h2 class="card-header">Novo Tabela de Preço</h2>
+
+<%= render "form.html", Map.put(assigns, :action, tbpreco_path(@conn, :create)) %>
+
+<span><%= link "Voltar", to: tbpreco_path(@conn, :index) %></span>
+
+   </div>
+  </div>
+</div>
+</center>
+

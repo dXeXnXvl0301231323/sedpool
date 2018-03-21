@@ -322,4 +322,292 @@ defmodule Sedpool.Account do
   def change_produto(%Produto{} = produto) do
     Produto.changeset(produto, %{})
   end
+
+  alias Sedpool.Account.Cliente
+
+  @doc """
+  Returns the list of clientes.
+
+  ## Examples
+
+      iex> list_clientes()
+      [%Cliente{}, ...]
+
+  """
+  def list_clientes do
+    Repo.all(Cliente)
+  end
+
+  @doc """
+  Gets a single cliente.
+
+  Raises `Ecto.NoResultsError` if the Cliente does not exist.
+
+  ## Examples
+
+      iex> get_cliente!(123)
+      %Cliente{}
+
+      iex> get_cliente!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_cliente!(id), do: Repo.get!(Cliente, id)
+
+  @doc """
+  Creates a cliente.
+
+  ## Examples
+
+      iex> create_cliente(%{field: value})
+      {:ok, %Cliente{}}
+
+      iex> create_cliente(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_cliente(attrs \\ %{}) do
+    %Cliente{}
+    |> Cliente.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a cliente.
+
+  ## Examples
+
+      iex> update_cliente(cliente, %{field: new_value})
+      {:ok, %Cliente{}}
+
+      iex> update_cliente(cliente, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_cliente(%Cliente{} = cliente, attrs) do
+    cliente
+    |> Cliente.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Cliente.
+
+  ## Examples
+
+      iex> delete_cliente(cliente)
+      {:ok, %Cliente{}}
+
+      iex> delete_cliente(cliente)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_cliente(%Cliente{} = cliente) do
+    Repo.delete(cliente)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking cliente changes.
+
+  ## Examples
+
+      iex> change_cliente(cliente)
+      %Ecto.Changeset{source: %Cliente{}}
+
+  """
+  def change_cliente(%Cliente{} = cliente) do
+    Cliente.changeset(cliente, %{})
+  end
+
+  alias Sedpool.Account.Condpag
+
+  @doc """
+  Returns the list of condpagamentos.
+
+  ## Examples
+
+      iex> list_condpagamentos()
+      [%Condpag{}, ...]
+
+  """
+  def list_condpagamentos do
+    Repo.all(Condpag)
+  end
+
+  @doc """
+  Gets a single condpag.
+
+  Raises `Ecto.NoResultsError` if the Condpag does not exist.
+
+  ## Examples
+
+      iex> get_condpag!(123)
+      %Condpag{}
+
+      iex> get_condpag!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_condpag!(id), do: Repo.get!(Condpag, id)
+
+  @doc """
+  Creates a condpag.
+
+  ## Examples
+
+      iex> create_condpag(%{field: value})
+      {:ok, %Condpag{}}
+
+      iex> create_condpag(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_condpag(attrs \\ %{}) do
+    %Condpag{}
+    |> Condpag.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a condpag.
+
+  ## Examples
+
+      iex> update_condpag(condpag, %{field: new_value})
+      {:ok, %Condpag{}}
+
+      iex> update_condpag(condpag, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_condpag(%Condpag{} = condpag, attrs) do
+    condpag
+    |> Condpag.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Condpag.
+
+  ## Examples
+
+      iex> delete_condpag(condpag)
+      {:ok, %Condpag{}}
+
+      iex> delete_condpag(condpag)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_condpag(%Condpag{} = condpag) do
+    Repo.delete(condpag)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking condpag changes.
+
+  ## Examples
+
+      iex> change_condpag(condpag)
+      %Ecto.Changeset{source: %Condpag{}}
+
+  """
+  def change_condpag(%Condpag{} = condpag) do
+    Condpag.changeset(condpag, %{})
+  end
+
+  alias Sedpool.Account.Tbpreco
+
+  @doc """
+  Returns the list of tbprecos.
+
+  ## Examples
+
+      iex> list_tbprecos()
+      [%Tbpreco{}, ...]
+
+  """
+  def list_tbprecos do
+    Repo.all(Tbpreco)
+  end
+
+  @doc """
+  Gets a single tbpreco.
+
+  Raises `Ecto.NoResultsError` if the Tbpreco does not exist.
+
+  ## Examples
+
+      iex> get_tbpreco!(123)
+      %Tbpreco{}
+
+      iex> get_tbpreco!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_tbpreco!(id), do: Repo.get!(Tbpreco, id)
+
+  @doc """
+  Creates a tbpreco.
+
+  ## Examples
+
+      iex> create_tbpreco(%{field: value})
+      {:ok, %Tbpreco{}}
+
+      iex> create_tbpreco(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_tbpreco(attrs \\ %{}) do
+    %Tbpreco{}
+    |> Tbpreco.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a tbpreco.
+
+  ## Examples
+
+      iex> update_tbpreco(tbpreco, %{field: new_value})
+      {:ok, %Tbpreco{}}
+
+      iex> update_tbpreco(tbpreco, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_tbpreco(%Tbpreco{} = tbpreco, attrs) do
+    tbpreco
+    |> Tbpreco.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Tbpreco.
+
+  ## Examples
+
+      iex> delete_tbpreco(tbpreco)
+      {:ok, %Tbpreco{}}
+
+      iex> delete_tbpreco(tbpreco)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_tbpreco(%Tbpreco{} = tbpreco) do
+    Repo.delete(tbpreco)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking tbpreco changes.
+
+  ## Examples
+
+      iex> change_tbpreco(tbpreco)
+      %Ecto.Changeset{source: %Tbpreco{}}
+
+  """
+  def change_tbpreco(%Tbpreco{} = tbpreco) do
+    Tbpreco.changeset(tbpreco, %{})
+  end
 end

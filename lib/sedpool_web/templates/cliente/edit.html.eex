@@ -1,0 +1,17 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<h2 class="card-header">Editar Cliente</h2>
+
+<%= render "form.html", Map.put(assigns, :action, cliente_path(@conn, :update, @cliente)) %>
+
+<span><%= link "Voltar", to: cliente_path(@conn, :index) %></span>
+
+</div>
+</div>
+</div>
+</center>
+

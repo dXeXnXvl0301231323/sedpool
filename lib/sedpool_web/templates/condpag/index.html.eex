@@ -1,0 +1,44 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<h2 class="card-header">Lista de Condição de pagamento</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Filial condpagamento</th>
+      <th>Codigo condpagamento</th>
+      <th>Tipo condpagamento</th>
+      <th>Descricao condpagamento</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for condpag <- @condpagamentos do %>
+    <tr>
+      <td><%= condpag.filial_condpagamento %></td>
+      <td><%= condpag.codigo_condpagamento %></td>
+      <td><%= condpag.tipo_condpagamento %></td>
+      <td><%= condpag.descricao_condpagamento %></td>
+
+      <td class="text-right">
+        <span><%= link "Monstrar", to: condpag_path(@conn, :show, condpag), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: condpag_path(@conn, :edit, condpag), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: condpag_path(@conn, :delete, condpag), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Nova Condição de Pagamento", to: condpag_path(@conn, :new) %></span>
+
+</div>
+</div>
+</div>
+</center>
+

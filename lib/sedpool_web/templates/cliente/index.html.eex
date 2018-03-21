@@ -1,0 +1,57 @@
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<center><h2 class="card-header">Listar Clientes</h2></center>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cod cliente</th>
+<!--      <th>Nome cliente</th> -->
+      <th>Fantasia cliente</th>
+      <th>Cnpj cliente</th>
+<!--      <th>Endereco cliente</th>
+      <th>Vendedor cliente</th>
+      <th>Tipo cliente</th>
+      <th>Tbpreco cliente</th>
+      <th>Pais cliente</th>
+      <th>Estado cliente</th>
+      <th>Cod municipio cliente</th>
+      <th>Municipio cliente</th> -->
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cliente <- @clientes do %>
+    <tr>
+      <td><%= cliente.cod_cliente %></td>
+<!--      <td><%= cliente.nome_cliente %></td> -->
+      <td><%= cliente.fantasia_cliente %></td>
+      <td><%= cliente.cnpj_cliente %></td>
+<!--      <td><%= cliente.endereco_cliente %></td>
+      <td><%= cliente.vendedor_cliente %></td>
+      <td><%= cliente.tipo_cliente %></td>
+      <td><%= cliente.tbpreco_cliente %></td>
+      <td><%= cliente.pais_cliente %></td>
+      <td><%= cliente.estado_cliente %></td>
+      <td><%= cliente.cod_municipio_cliente %></td>
+      <td><%= cliente.municipio_cliente %></td> -->
+
+      <td class="text-right">
+        <span><%= link "Monstrar", to: cliente_path(@conn, :show, cliente), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: cliente_path(@conn, :edit, cliente), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: cliente_path(@conn, :delete, cliente), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<center><span><%= link "Novo Cliente", to: cliente_path(@conn, :new) %></span> </center>
+
+</div>
+</div>
+</div>

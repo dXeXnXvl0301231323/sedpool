@@ -1,0 +1,17 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<h2 class="card-header">Nova Condição de Pagamento</h2>
+
+<%= render "form.html", Map.put(assigns, :action, condpag_path(@conn, :create)) %>
+
+<span><%= link "Voltar", to: condpag_path(@conn, :index) %></span>
+
+</div>
+</div>
+</div>
+</center>
+

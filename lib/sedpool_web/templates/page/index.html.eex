@@ -20,6 +20,17 @@
       <li>
         <a href="/produtos">Cadastro de Produtos</a>
       </li>
+      <li>
+        <a href="/condpagamentos">Cadastro de Cod.Pagamento</a>
+      </li>
+      <li>
+        <a href="/clientes">Cadastro de Clientes</a>
+      </li>
+      <li>
+        <a href="/tbprecos">Cadastro de Tabela de Preço</a>
+      </li>
+
+
 
     </ul>
   </div>
