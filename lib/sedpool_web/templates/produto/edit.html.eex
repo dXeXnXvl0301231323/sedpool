@@ -1,0 +1,15 @@
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+<h2 class="card-header">Editar Produto</h2>
+
+<%= render "form.html", Map.put(assigns, :action, produto_path(@conn, :update, @produto)) %>
+
+<span><%= link "Voltar", to: produto_path(@conn, :index) %></span>
+
+  </div>
+ </div>
+</div>
+</center>

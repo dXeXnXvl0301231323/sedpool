@@ -1,0 +1,50 @@
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+
+<h2 class="card-header">Monstrar Produto</h2>
+
+<ul>
+
+  <li>
+    <strong>Filial produto:</strong>
+    <%= @produto.filial_produto %>
+  </li>
+
+  <li>
+    <strong>Codigo produto:</strong>
+    <%= @produto.codigo_produto %>
+  </li>
+
+  <li>
+    <strong>Descricao produto:</strong>
+    <%= @produto.descricao_produto %>
+  </li>
+
+  <li>
+    <strong>Tipo produto:</strong>
+    <%= @produto.tipo_produto %>
+  </li>
+
+  <li>
+    <strong>Unidade medida produto:</strong>
+    <%= @produto.unidade_medida_produto %>
+  </li>
+
+  <li>
+    <strong>Grupo produto:</strong>
+    <%= @produto.grupo_produto %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: produto_path(@conn, :edit, @produto) %></span>
+<span><%= link "Voltar", to: produto_path(@conn, :index) %></span>
+
+  </div>
+ </div>
+</div>
+</center>
+

@@ -17,6 +17,10 @@
       <li>
         <a href="/vendedores">Cadastro de Vendedor</a>
       </li>
+      <li>
+        <a href="/produtos">Cadastro de Produtos</a>
+      </li>
+
     </ul>
   </div>
 

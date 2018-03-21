@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor, verifique os erros abaixo.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :filial_produto, class: "control-label" %>
+    <%= text_input f, :filial_produto, class: "form-control" %>
+    <%= error_tag f, :filial_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :codigo_produto, class: "control-label" %>
+    <%= text_input f, :codigo_produto, class: "form-control" %>
+    <%= error_tag f, :codigo_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :descricao_produto, class: "control-label" %>
+    <%= text_input f, :descricao_produto, class: "form-control" %>
+    <%= error_tag f, :descricao_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tipo_produto, class: "control-label" %>
+    <%= text_input f, :tipo_produto, class: "form-control" %>
+    <%= error_tag f, :tipo_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :unidade_medida_produto, class: "control-label" %>
+    <%= text_input f, :unidade_medida_produto, class: "form-control" %>
+    <%= error_tag f, :unidade_medida_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :grupo_produto, class: "control-label" %>
+    <%= text_input f, :grupo_produto, class: "form-control" %>
+    <%= error_tag f, :grupo_produto %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>

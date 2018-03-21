@@ -1,0 +1,48 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+
+<h2 class="card-header">Lista Produtos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Filial produto</th>
+      <th>Codigo produto</th>
+      <th>Descricao produto</th>
+      <th>Tipo produto</th>
+      <th>Unidade medida produto</th>
+      <th>Grupo produto</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for produto <- @produtos do %>
+    <tr>
+      <td><%= produto.filial_produto %></td>
+      <td><%= produto.codigo_produto %></td>
+      <td><%= produto.descricao_produto %></td>
+      <td><%= produto.tipo_produto %></td>
+      <td><%= produto.unidade_medida_produto %></td>
+      <td><%= produto.grupo_produto %></td>
+
+      <td class="text-right">
+        <span><%= link "Monstrar", to: produto_path(@conn, :show, produto), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: produto_path(@conn, :edit, produto), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: produto_path(@conn, :delete, produto), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Produto", to: produto_path(@conn, :new) %></span>
+
+
+</div>
+</div>
+</div>
+</center>

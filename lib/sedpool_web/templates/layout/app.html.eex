@@ -12,6 +12,7 @@
     <title>SEDSPOOL</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
+
   <body background="/images/background_green.jpeg">
         <%= render "_navbar.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
 

@@ -11,6 +11,12 @@
 
               <li class="nav-item">
                 <span class="navbar-text">
+                  <%= link "Produtos", to: produto_path(@conn, :index) %>
+                </span>
+              </li>
+
+              <li class="nav-item">
+                <span class="navbar-text">
                   <%= link "Vendedores", to: vendedor_path(@conn, :index) %>
                 </span>
               </li>
