@@ -1,0 +1,16 @@
+<center>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+
+<h2 class="card-header">Novo Itens do Pedido</h2>
+
+<%= render "form.html", Map.put(assigns, :action, itenspedido_path(@conn, :create)) %>
+
+<span><%= link "Voltar", to: itenspedido_path(@conn, :index) %></span>
+
+    </div>
+  </div>
+</div>
+</center>
+

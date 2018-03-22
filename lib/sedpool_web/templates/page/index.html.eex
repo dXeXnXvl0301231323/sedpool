@@ -29,8 +29,9 @@
       <li>
         <a href="/tbprecos">Cadastro de Tabela de Preço</a>
       </li>
-
-
+      <li>
+        <a href="/itenspedidos">Cadastro de itens de Pedido</a>
+      </li>
 
     </ul>
   </div>

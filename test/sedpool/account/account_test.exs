@@ -352,4 +352,88 @@ defmodule Sedpool.AccountTest do
       assert %Ecto.Changeset{} = Account.change_tbpreco(tbpreco)
     end
   end
+
+  describe "itenspedidos" do
+    alias Sedpool.Account.Itenspedido
+
+    @valid_attrs %{cli_itenspedidos: "some cli_itenspedidos", descont_itenspedidos: "some descont_itenspedidos", descri_itenspedidos: "some descri_itenspedidos", filial_itenspedidos: "some filial_itenspedidos", item_itenspedidos: "some item_itenspedidos", loja_itenspedidos: "some loja_itenspedidos", num_itenspedidos: "some num_itenspedidos", prcven_itenspedidos: "some prcven_itenspedidos", produto_itenspedidos: "some produto_itenspedidos", prunit_itenspedidos: "some prunit_itenspedidos", qtdven_itenspedidos: "some qtdven_itenspedidos", um_itenspedidos: "some um_itenspedidos", valor_itenspedidos: "some valor_itenspedidos"}
+    @update_attrs %{cli_itenspedidos: "some updated cli_itenspedidos", descont_itenspedidos: "some updated descont_itenspedidos", descri_itenspedidos: "some updated descri_itenspedidos", filial_itenspedidos: "some updated filial_itenspedidos", item_itenspedidos: "some updated item_itenspedidos", loja_itenspedidos: "some updated loja_itenspedidos", num_itenspedidos: "some updated num_itenspedidos", prcven_itenspedidos: "some updated prcven_itenspedidos", produto_itenspedidos: "some updated produto_itenspedidos", prunit_itenspedidos: "some updated prunit_itenspedidos", qtdven_itenspedidos: "some updated qtdven_itenspedidos", um_itenspedidos: "some updated um_itenspedidos", valor_itenspedidos: "some updated valor_itenspedidos"}
+    @invalid_attrs %{cli_itenspedidos: nil, descont_itenspedidos: nil, descri_itenspedidos: nil, filial_itenspedidos: nil, item_itenspedidos: nil, loja_itenspedidos: nil, num_itenspedidos: nil, prcven_itenspedidos: nil, produto_itenspedidos: nil, prunit_itenspedidos: nil, qtdven_itenspedidos: nil, um_itenspedidos: nil, valor_itenspedidos: nil}
+
+    def itenspedido_fixture(attrs \\ %{}) do
+      {:ok, itenspedido} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Account.create_itenspedido()
+
+      itenspedido
+    end
+
+    test "list_itenspedidos/0 returns all itenspedidos" do
+      itenspedido = itenspedido_fixture()
+      assert Account.list_itenspedidos() == [itenspedido]
+    end
+
+    test "get_itenspedido!/1 returns the itenspedido with given id" do
+      itenspedido = itenspedido_fixture()
+      assert Account.get_itenspedido!(itenspedido.id) == itenspedido
+    end
+
+    test "create_itenspedido/1 with valid data creates a itenspedido" do
+      assert {:ok, %Itenspedido{} = itenspedido} = Account.create_itenspedido(@valid_attrs)
+      assert itenspedido.cli_itenspedidos == "some cli_itenspedidos"
+      assert itenspedido.descont_itenspedidos == "some descont_itenspedidos"
+      assert itenspedido.descri_itenspedidos == "some descri_itenspedidos"
+      assert itenspedido.filial_itenspedidos == "some filial_itenspedidos"
+      assert itenspedido.item_itenspedidos == "some item_itenspedidos"
+      assert itenspedido.loja_itenspedidos == "some loja_itenspedidos"
+      assert itenspedido.num_itenspedidos == "some num_itenspedidos"
+      assert itenspedido.prcven_itenspedidos == "some prcven_itenspedidos"
+      assert itenspedido.produto_itenspedidos == "some produto_itenspedidos"
+      assert itenspedido.prunit_itenspedidos == "some prunit_itenspedidos"
+      assert itenspedido.qtdven_itenspedidos == "some qtdven_itenspedidos"
+      assert itenspedido.um_itenspedidos == "some um_itenspedidos"
+      assert itenspedido.valor_itenspedidos == "some valor_itenspedidos"
+    end
+
+    test "create_itenspedido/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Account.create_itenspedido(@invalid_attrs)
+    end
+
+    test "update_itenspedido/2 with valid data updates the itenspedido" do
+      itenspedido = itenspedido_fixture()
+      assert {:ok, itenspedido} = Account.update_itenspedido(itenspedido, @update_attrs)
+      assert %Itenspedido{} = itenspedido
+      assert itenspedido.cli_itenspedidos == "some updated cli_itenspedidos"
+      assert itenspedido.descont_itenspedidos == "some updated descont_itenspedidos"
+      assert itenspedido.descri_itenspedidos == "some updated descri_itenspedidos"
+      assert itenspedido.filial_itenspedidos == "some updated filial_itenspedidos"
+      assert itenspedido.item_itenspedidos == "some updated item_itenspedidos"
+      assert itenspedido.loja_itenspedidos == "some updated loja_itenspedidos"
+      assert itenspedido.num_itenspedidos == "some updated num_itenspedidos"
+      assert itenspedido.prcven_itenspedidos == "some updated prcven_itenspedidos"
+      assert itenspedido.produto_itenspedidos == "some updated produto_itenspedidos"
+      assert itenspedido.prunit_itenspedidos == "some updated prunit_itenspedidos"
+      assert itenspedido.qtdven_itenspedidos == "some updated qtdven_itenspedidos"
+      assert itenspedido.um_itenspedidos == "some updated um_itenspedidos"
+      assert itenspedido.valor_itenspedidos == "some updated valor_itenspedidos"
+    end
+
+    test "update_itenspedido/2 with invalid data returns error changeset" do
+      itenspedido = itenspedido_fixture()
+      assert {:error, %Ecto.Changeset{}} = Account.update_itenspedido(itenspedido, @invalid_attrs)
+      assert itenspedido == Account.get_itenspedido!(itenspedido.id)
+    end
+
+    test "delete_itenspedido/1 deletes the itenspedido" do
+      itenspedido = itenspedido_fixture()
+      assert {:ok, %Itenspedido{}} = Account.delete_itenspedido(itenspedido)
+      assert_raise Ecto.NoResultsError, fn -> Account.get_itenspedido!(itenspedido.id) end
+    end
+
+    test "change_itenspedido/1 returns a itenspedido changeset" do
+      itenspedido = itenspedido_fixture()
+      assert %Ecto.Changeset{} = Account.change_itenspedido(itenspedido)
+    end
+  end
 end

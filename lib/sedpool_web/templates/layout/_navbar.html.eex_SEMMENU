@@ -11,6 +11,12 @@
 
               <li class="nav-item">
                 <span class="navbar-text">
+                  <%= link "Produtos", to: produto_path(@conn, :index) %>
+                </span>
+              </li>
+
+              <li class="nav-item">
+                <span class="navbar-text">
                   <%= link "Vendedores", to: vendedor_path(@conn, :index) %>
                 </span>
               </li>
@@ -27,25 +33,23 @@
                 </span>
               </li>
 
+              <li class="nav-item">
+                <span class="navbar-text">
+                  <%= link "Tabela de Preços", to: tbpreco_path(@conn, :index) %>
+                </span>
+              </li>
+
+             <li class="nav-item">
+                <span class="navbar-text">
+                  <%= link "Item.Pedido", to: itenspedido_path(@conn, :index) %>
+                </span>
+              </li>
+
              <li class="nav-item">
                 <span class="navbar-text">
                   <%= link "Usuários", to: user_path(@conn, :index) %>
                 </span>
               </li>
-
-
-<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Vendas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/itenspedidos">Item.Pedido</a>
-          <a class="dropdown-item" href="/tbprecos">Tabela de Preço</a>
-          <a class="dropdown-item" href="/produtos">Produtos</a>
-<!--          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> -->
-        </div>
-      </li>
 
               <li class="nav-item">
                 <span class="navbar-text"><%= @current_user.nome %></span>&ensp;

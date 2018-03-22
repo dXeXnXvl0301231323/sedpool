@@ -610,4 +610,100 @@ defmodule Sedpool.Account do
   def change_tbpreco(%Tbpreco{} = tbpreco) do
     Tbpreco.changeset(tbpreco, %{})
   end
+
+  alias Sedpool.Account.Itenspedido
+
+  @doc """
+  Returns the list of itenspedidos.
+
+  ## Examples
+
+      iex> list_itenspedidos()
+      [%Itenspedido{}, ...]
+
+  """
+  def list_itenspedidos do
+    Repo.all(Itenspedido)
+  end
+
+  @doc """
+  Gets a single itenspedido.
+
+  Raises `Ecto.NoResultsError` if the Itenspedido does not exist.
+
+  ## Examples
+
+      iex> get_itenspedido!(123)
+      %Itenspedido{}
+
+      iex> get_itenspedido!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_itenspedido!(id), do: Repo.get!(Itenspedido, id)
+
+  @doc """
+  Creates a itenspedido.
+
+  ## Examples
+
+      iex> create_itenspedido(%{field: value})
+      {:ok, %Itenspedido{}}
+
+      iex> create_itenspedido(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_itenspedido(attrs \\ %{}) do
+    %Itenspedido{}
+    |> Itenspedido.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a itenspedido.
+
+  ## Examples
+
+      iex> update_itenspedido(itenspedido, %{field: new_value})
+      {:ok, %Itenspedido{}}
+
+      iex> update_itenspedido(itenspedido, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_itenspedido(%Itenspedido{} = itenspedido, attrs) do
+    itenspedido
+    |> Itenspedido.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Itenspedido.
+
+  ## Examples
+
+      iex> delete_itenspedido(itenspedido)
+      {:ok, %Itenspedido{}}
+
+      iex> delete_itenspedido(itenspedido)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_itenspedido(%Itenspedido{} = itenspedido) do
+    Repo.delete(itenspedido)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking itenspedido changes.
+
+  ## Examples
+
+      iex> change_itenspedido(itenspedido)
+      %Ecto.Changeset{source: %Itenspedido{}}
+
+  """
+  def change_itenspedido(%Itenspedido{} = itenspedido) do
+    Itenspedido.changeset(itenspedido, %{})
+  end
 end

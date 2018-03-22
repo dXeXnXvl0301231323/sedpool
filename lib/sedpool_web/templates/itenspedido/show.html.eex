@@ -1,0 +1,73 @@
+<h2>Show Itenspedido</h2>
+
+<ul>
+
+  <li>
+    <strong>Filial itenspedidos:</strong>
+    <%= @itenspedido.filial_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Item itenspedidos:</strong>
+    <%= @itenspedido.item_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Produto itenspedidos:</strong>
+    <%= @itenspedido.produto_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Um itenspedidos:</strong>
+    <%= @itenspedido.um_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Qtdven itenspedidos:</strong>
+    <%= @itenspedido.qtdven_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Prcven itenspedidos:</strong>
+    <%= @itenspedido.prcven_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Valor itenspedidos:</strong>
+    <%= @itenspedido.valor_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Cli itenspedidos:</strong>
+    <%= @itenspedido.cli_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Loja itenspedidos:</strong>
+    <%= @itenspedido.loja_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Descont itenspedidos:</strong>
+    <%= @itenspedido.descont_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Num itenspedidos:</strong>
+    <%= @itenspedido.num_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Descri itenspedidos:</strong>
+    <%= @itenspedido.descri_itenspedidos %>
+  </li>
+
+  <li>
+    <strong>Prunit itenspedidos:</strong>
+    <%= @itenspedido.prunit_itenspedidos %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: itenspedido_path(@conn, :edit, @itenspedido) %></span>
+<span><%= link "Back", to: itenspedido_path(@conn, :index) %></span>

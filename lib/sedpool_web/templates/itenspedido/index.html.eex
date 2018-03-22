@@ -1,0 +1,61 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+<h2 class="card-header">Lista de Itens de Pedidos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Filial</th>
+      <th>Item</th>
+      <th>Produto</th>
+      <th>Um</th>
+      <th>Qtdven</th>
+      <th>Prcven</th>
+      <th>Valor</th>
+      <th>Cli</th>
+      <th>Loja</th>
+      <th>Descont</th>
+      <th>Num</th>
+      <th>Descri</th>
+      <th>Prunit</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for itenspedido <- @itenspedidos do %>
+    <tr>
+      <td><%= itenspedido.filial_itenspedidos %></td>
+      <td><%= itenspedido.item_itenspedidos %></td>
+      <td><%= itenspedido.produto_itenspedidos %></td>
+      <td><%= itenspedido.um_itenspedidos %></td>
+      <td><%= itenspedido.qtdven_itenspedidos %></td>
+      <td><%= itenspedido.prcven_itenspedidos %></td>
+      <td><%= itenspedido.valor_itenspedidos %></td>
+      <td><%= itenspedido.cli_itenspedidos %></td>
+      <td><%= itenspedido.loja_itenspedidos %></td>
+      <td><%= itenspedido.descont_itenspedidos %></td>
+      <td><%= itenspedido.num_itenspedidos %></td>
+      <td><%= itenspedido.descri_itenspedidos %></td>
+      <td><%= itenspedido.prunit_itenspedidos %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: itenspedido_path(@conn, :show, itenspedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: itenspedido_path(@conn, :edit, itenspedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: itenspedido_path(@conn, :delete, itenspedido), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Itens do Pedido", to: itenspedido_path(@conn, :new) %></span>
+
+   </div>
+  </div>
+</div>
+</center>
+

@@ -1,0 +1,89 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, algo deu errado! Por favor, verifique os erros abaixo.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :filial_itenspedidos, class: "control-label" %>
+    <%= text_input f, :filial_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :filial_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :item_itenspedidos, class: "control-label" %>
+    <%= text_input f, :item_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :item_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :produto_itenspedidos, class: "control-label" %>
+    <%= text_input f, :produto_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :produto_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :um_itenspedidos, class: "control-label" %>
+    <%= text_input f, :um_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :um_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :qtdven_itenspedidos, class: "control-label" %>
+    <%= text_input f, :qtdven_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :qtdven_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :prcven_itenspedidos, class: "control-label" %>
+    <%= text_input f, :prcven_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :prcven_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :valor_itenspedidos, class: "control-label" %>
+    <%= text_input f, :valor_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :valor_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :cli_itenspedidos, class: "control-label" %>
+    <%= text_input f, :cli_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :cli_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :loja_itenspedidos, class: "control-label" %>
+    <%= text_input f, :loja_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :loja_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :descont_itenspedidos, class: "control-label" %>
+    <%= text_input f, :descont_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :descont_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :num_itenspedidos, class: "control-label" %>
+    <%= text_input f, :num_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :num_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :descri_itenspedidos, class: "control-label" %>
+    <%= text_input f, :descri_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :descri_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :prunit_itenspedidos, class: "control-label" %>
+    <%= text_input f, :prunit_itenspedidos, class: "form-control" %>
+    <%= error_tag f, :prunit_itenspedidos %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>
