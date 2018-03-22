@@ -16,6 +16,13 @@ defmodule Sedpool.Account.Pedido do
     field :tipo_pedidos, :string
     field :tipocli_pedidos, :string
     field :vend1_pedidos, :string
+    has_many :produtos, Sedpool.Account.Produto
+    has_many :clientes, Sedpool.Account.Cliente
+    has_many :condpagamentos, Sedpool.Account.Condpag
+    has_many :itenspedidos, Sedpool.Account.Itenspedido
+    has_many :tbprecos, Sedpool.Account.Tbpreco
+    has_many :vendedores, Sedpool.Account.Vendedor
+    has_many :users, Sedpool.Account.User
 
     timestamps()
   end
