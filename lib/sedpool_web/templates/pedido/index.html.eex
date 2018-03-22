@@ -12,12 +12,12 @@
       <th>Numero</th>
       <th>Tipo</th>
       <th>Cliente</th>
-      <th>Lojacli</th>
-      <th>Tipocli</th>
+      <th>Loja.Cliente</th>
+      <th>Tipo.Cliente</th>
       <th>Cond.Pagamento</th>
       <th>Tabela</th>
-      <th>Vend1</th>
-      <th>Mennota</th>
+      <th>Vendedor</th>
+      <th>Mensagem da Nota</th>
       <th>Emissao</th>
       <th>Nota</th>
 
