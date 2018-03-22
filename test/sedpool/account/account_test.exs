@@ -436,4 +436,86 @@ defmodule Sedpool.AccountTest do
       assert %Ecto.Changeset{} = Account.change_itenspedido(itenspedido)
     end
   end
+
+  describe "pedidos" do
+    alias Sedpool.Account.Pedido
+
+    @valid_attrs %{cliente_pedidos: "some cliente_pedidos", condpag_pedidos: "some condpag_pedidos", emissao_pedidos: "some emissao_pedidos", filial_pedidos: "some filial_pedidos", lojacli_pedidos: "some lojacli_pedidos", mennota_pedidos: "some mennota_pedidos", nota_pedidos: "some nota_pedidos", num_pedidos: "some num_pedidos", tabela_pedidos: "some tabela_pedidos", tipo_pedidos: "some tipo_pedidos", tipocli_pedidos: "some tipocli_pedidos", vend1_pedidos: "some vend1_pedidos"}
+    @update_attrs %{cliente_pedidos: "some updated cliente_pedidos", condpag_pedidos: "some updated condpag_pedidos", emissao_pedidos: "some updated emissao_pedidos", filial_pedidos: "some updated filial_pedidos", lojacli_pedidos: "some updated lojacli_pedidos", mennota_pedidos: "some updated mennota_pedidos", nota_pedidos: "some updated nota_pedidos", num_pedidos: "some updated num_pedidos", tabela_pedidos: "some updated tabela_pedidos", tipo_pedidos: "some updated tipo_pedidos", tipocli_pedidos: "some updated tipocli_pedidos", vend1_pedidos: "some updated vend1_pedidos"}
+    @invalid_attrs %{cliente_pedidos: nil, condpag_pedidos: nil, emissao_pedidos: nil, filial_pedidos: nil, lojacli_pedidos: nil, mennota_pedidos: nil, nota_pedidos: nil, num_pedidos: nil, tabela_pedidos: nil, tipo_pedidos: nil, tipocli_pedidos: nil, vend1_pedidos: nil}
+
+    def pedido_fixture(attrs \\ %{}) do
+      {:ok, pedido} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Account.create_pedido()
+
+      pedido
+    end
+
+    test "list_pedidos/0 returns all pedidos" do
+      pedido = pedido_fixture()
+      assert Account.list_pedidos() == [pedido]
+    end
+
+    test "get_pedido!/1 returns the pedido with given id" do
+      pedido = pedido_fixture()
+      assert Account.get_pedido!(pedido.id) == pedido
+    end
+
+    test "create_pedido/1 with valid data creates a pedido" do
+      assert {:ok, %Pedido{} = pedido} = Account.create_pedido(@valid_attrs)
+      assert pedido.cliente_pedidos == "some cliente_pedidos"
+      assert pedido.condpag_pedidos == "some condpag_pedidos"
+      assert pedido.emissao_pedidos == "some emissao_pedidos"
+      assert pedido.filial_pedidos == "some filial_pedidos"
+      assert pedido.lojacli_pedidos == "some lojacli_pedidos"
+      assert pedido.mennota_pedidos == "some mennota_pedidos"
+      assert pedido.nota_pedidos == "some nota_pedidos"
+      assert pedido.num_pedidos == "some num_pedidos"
+      assert pedido.tabela_pedidos == "some tabela_pedidos"
+      assert pedido.tipo_pedidos == "some tipo_pedidos"
+      assert pedido.tipocli_pedidos == "some tipocli_pedidos"
+      assert pedido.vend1_pedidos == "some vend1_pedidos"
+    end
+
+    test "create_pedido/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Account.create_pedido(@invalid_attrs)
+    end
+
+    test "update_pedido/2 with valid data updates the pedido" do
+      pedido = pedido_fixture()
+      assert {:ok, pedido} = Account.update_pedido(pedido, @update_attrs)
+      assert %Pedido{} = pedido
+      assert pedido.cliente_pedidos == "some updated cliente_pedidos"
+      assert pedido.condpag_pedidos == "some updated condpag_pedidos"
+      assert pedido.emissao_pedidos == "some updated emissao_pedidos"
+      assert pedido.filial_pedidos == "some updated filial_pedidos"
+      assert pedido.lojacli_pedidos == "some updated lojacli_pedidos"
+      assert pedido.mennota_pedidos == "some updated mennota_pedidos"
+      assert pedido.nota_pedidos == "some updated nota_pedidos"
+      assert pedido.num_pedidos == "some updated num_pedidos"
+      assert pedido.tabela_pedidos == "some updated tabela_pedidos"
+      assert pedido.tipo_pedidos == "some updated tipo_pedidos"
+      assert pedido.tipocli_pedidos == "some updated tipocli_pedidos"
+      assert pedido.vend1_pedidos == "some updated vend1_pedidos"
+    end
+
+    test "update_pedido/2 with invalid data returns error changeset" do
+      pedido = pedido_fixture()
+      assert {:error, %Ecto.Changeset{}} = Account.update_pedido(pedido, @invalid_attrs)
+      assert pedido == Account.get_pedido!(pedido.id)
+    end
+
+    test "delete_pedido/1 deletes the pedido" do
+      pedido = pedido_fixture()
+      assert {:ok, %Pedido{}} = Account.delete_pedido(pedido)
+      assert_raise Ecto.NoResultsError, fn -> Account.get_pedido!(pedido.id) end
+    end
+
+    test "change_pedido/1 returns a pedido changeset" do
+      pedido = pedido_fixture()
+      assert %Ecto.Changeset{} = Account.change_pedido(pedido)
+    end
+  end
 end

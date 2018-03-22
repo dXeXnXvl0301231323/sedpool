@@ -1,0 +1,80 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+<h2 class="card-header">Mostrar Pedido</h2>
+
+<ul>
+
+  <li>
+    <strong>Filial pedidos:</strong>
+    <%= @pedido.filial_pedidos %>
+  </li>
+
+  <li>
+    <strong>Num pedidos:</strong>
+    <%= @pedido.num_pedidos %>
+  </li>
+
+  <li>
+    <strong>Tipo pedidos:</strong>
+    <%= @pedido.tipo_pedidos %>
+  </li>
+
+  <li>
+    <strong>Cliente pedidos:</strong>
+    <%= @pedido.cliente_pedidos %>
+  </li>
+
+  <li>
+    <strong>Lojacli pedidos:</strong>
+    <%= @pedido.lojacli_pedidos %>
+  </li>
+
+  <li>
+    <strong>Tipocli pedidos:</strong>
+    <%= @pedido.tipocli_pedidos %>
+  </li>
+
+  <li>
+    <strong>Condpag pedidos:</strong>
+    <%= @pedido.condpag_pedidos %>
+  </li>
+
+  <li>
+    <strong>Tabela pedidos:</strong>
+    <%= @pedido.tabela_pedidos %>
+  </li>
+
+  <li>
+    <strong>Vend1 pedidos:</strong>
+    <%= @pedido.vend1_pedidos %>
+  </li>
+
+  <li>
+    <strong>Mennota pedidos:</strong>
+    <%= @pedido.mennota_pedidos %>
+  </li>
+
+  <li>
+    <strong>Emissao pedidos:</strong>
+    <%= @pedido.emissao_pedidos %>
+  </li>
+
+  <li>
+    <strong>Nota pedidos:</strong>
+    <%= @pedido.nota_pedidos %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: pedido_path(@conn, :edit, @pedido) %></span>
+<span><%= link "Voltar", to: pedido_path(@conn, :index) %></span>
+
+
+   </div>
+  </div>
+</div>
+</center>
+

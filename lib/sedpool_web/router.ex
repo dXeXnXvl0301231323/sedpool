@@ -33,7 +33,7 @@ defmodule SedpoolWeb.Router do
     resources "/condpagamentos", CondpagController
     resources "/tbprecos", TbprecoController
     resources "/itenspedidos", ItenspedidoController
-
+    resources "/pedidos", PedidoController
     get "/login", SessionController, :new
     post "/login", SessionController, :create
     get "/logout", SessionController, :destroy

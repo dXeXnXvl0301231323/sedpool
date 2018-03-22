@@ -14,7 +14,7 @@ defmodule SedpoolWeb.SessionController do
         conn
         |> Sedpool.Guardian.Plug.sign_in(user)
         |> put_flash(:info, "Login efetuado!")
-        |> redirect(to: "/")
+        |> redirect(to: "/pedidos")
       _ -> 
         render conn, "index.html"
     end

@@ -9,10 +9,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Filial condpagamento</th>
-      <th>Codigo condpagamento</th>
-      <th>Tipo condpagamento</th>
-      <th>Descricao condpagamento</th>
+      <th>Filial</th>
+      <th>Código</th>
+      <th>Tipo</th>
+      <th>Descriçao</th>
 
       <th></th>
     </tr>

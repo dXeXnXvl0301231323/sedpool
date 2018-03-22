@@ -9,12 +9,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Filial produto</th>
-      <th>Codigo produto</th>
-      <th>Descricao produto</th>
-      <th>Tipo produto</th>
-      <th>Unidade medida produto</th>
-      <th>Grupo produto</th>
+      <th>Filial</th>
+      <th>Codigo</th>
+      <th>Descrição</th>
+      <th>Tipo</th>
+      <th>Unid.Medida</th>
+      <th>Grupo</th>
 
       <th></th>
     </tr>

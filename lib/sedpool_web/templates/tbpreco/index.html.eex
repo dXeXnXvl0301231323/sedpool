@@ -8,12 +8,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Filial tbpreco</th>
-      <th>Item tbpreco</th>
-      <th>Codtabela tbpreco</th>
-      <th>Codproduto tbpreco</th>
-      <th>Precovenda tbpreco</th>
-      <th>Valordesconto tbpreco</th>
+      <th>Filial</th>
+      <th>Item</th>
+      <th>Codigo Tabela</th>
+      <th>Codigo Produto</th>
+      <th>Preço venda</th>
+      <th>Valor Desconto</th>
 
       <th></th>
     </tr>
@@ -21,11 +21,11 @@
   <tbody>
 <%= for tbpreco <- @tbprecos do %>
     <tr>
-      <td><%= tbpreco.filial_tbpreco %></td>
+      <td> <%= tbpreco.filial_tbpreco %></td>
       <td><%= tbpreco.item_tbpreco %></td>
       <td><%= tbpreco.codtabela_tbpreco %></td>
       <td><%= tbpreco.codproduto_tbpreco %></td>
-      <td><%= tbpreco.precovenda_tbpreco %></td>
+      <td>R$: <%= tbpreco.precovenda_tbpreco %></td>
       <td><%= tbpreco.valordesconto_tbpreco %></td>
 
       <td class="text-right">

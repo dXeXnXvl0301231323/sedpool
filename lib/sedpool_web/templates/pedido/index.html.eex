@@ -1,0 +1,59 @@
+<center>
+ <div class="container-fluid row">
+     <div class="col-md-12 offset-md-0">
+    <div class="card">
+
+<h2 class="card-header">Lista de Pedidos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Filial</th>
+      <th>Numero</th>
+      <th>Tipo</th>
+      <th>Cliente</th>
+      <th>Lojacli</th>
+      <th>Tipocli</th>
+      <th>Cond.Pagamento</th>
+      <th>Tabela</th>
+      <th>Vend1</th>
+      <th>Mennota</th>
+      <th>Emissao</th>
+      <th>Nota</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pedido <- @pedidos do %>
+    <tr>
+      <td><%= pedido.filial_pedidos %></td>
+      <td><%= pedido.num_pedidos %></td>
+      <td><%= pedido.tipo_pedidos %></td>
+      <td><%= pedido.cliente_pedidos %></td>
+      <td><%= pedido.lojacli_pedidos %></td>
+      <td><%= pedido.tipocli_pedidos %></td>
+      <td><%= pedido.condpag_pedidos %></td>
+      <td><%= pedido.tabela_pedidos %></td>
+      <td><%= pedido.vend1_pedidos %></td>
+      <td><%= pedido.mennota_pedidos %></td>
+      <td><%= pedido.emissao_pedidos %></td>
+      <td><%= pedido.nota_pedidos %></td>
+
+      <td class="text-right">
+        <span><%= link "Monstrar", to: pedido_path(@conn, :show, pedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: pedido_path(@conn, :edit, pedido), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Deletar", to: pedido_path(@conn, :delete, pedido), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Novo Pedido", to: pedido_path(@conn, :new) %></span>
+
+   </div>
+  </div>
+</div>
+</center>
+

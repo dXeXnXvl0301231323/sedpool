@@ -15,37 +15,34 @@
                 </span>
               </li>
 
-              <li class="nav-item">
-                <span class="navbar-text">
-                  <%= link "Clientes", to: cliente_path(@conn, :index) %>
-                </span>
-              </li>
-
-              <li class="nav-item">
-                <span class="navbar-text">
-                  <%= link "Cod.Pagamento", to: condpag_path(@conn, :index) %>
-                </span>
-              </li>
-
-             <li class="nav-item">
-                <span class="navbar-text">
-                  <%= link "Usuários", to: user_path(@conn, :index) %>
-                </span>
-              </li>
-
-
 <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Vendas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/condpagamentos">Condição de Pagamento</a>
           <a class="dropdown-item" href="/itenspedidos">Item.Pedido</a>
           <a class="dropdown-item" href="/tbprecos">Tabela de Preço</a>
           <a class="dropdown-item" href="/produtos">Produtos</a>
+          <a class="dropdown-item" href="/clientes">Clientes</a>
+          <a class="dropdown-item" href="/pedidos">Pedidos</a>
 <!--          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a> -->
         </div>
       </li>
+
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gerenc.Usuários
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/users">Usuários</a>
+          <a class="dropdown-item" href="#">Grupo de Usuário</a>
+<!--          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> -->
+        </div>
+      </li>
+
 
               <li class="nav-item">
                 <span class="navbar-text"><%= @current_user.nome %></span>&ensp;
