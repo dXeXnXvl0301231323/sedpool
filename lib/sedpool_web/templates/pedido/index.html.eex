@@ -1,10 +1,8 @@
-<center>
  <div class="container-fluid row">
      <div class="col-md-12 offset-md-0">
     <div class="card">
 
-<h2 class="card-header">Lista de Pedidos</h2>
-
+<center><h2 class="card-header">Lista de Pedidos</h2></center>
 <table class="table">
   <thead>
     <tr>
@@ -47,13 +45,14 @@
       </td>
     </tr>
 <% end %>
+
   </tbody>
 </table>
 
-<span><%= link "Novo Pedido", to: pedido_path(@conn, :new) %></span>
-
+<center><span><%= link "Novo Pedido", to: pedido_path(@conn, :new) %></span></center>
+</br>
+<%= pagination_links @page, view_style: :bootstrap_v4, next: "Avançar", previous: "Voltar" %>
    </div>
   </div>
 </div>
-</center>
 

@@ -27,5 +27,7 @@ config :logger, :console,
   secret_key: "BxHVjx+3nwex2Vjc8xrDukui7rIz+mye8Yrj370INHCRBACwZW1XV7udX/9Xm44O",
   serializer: Sedpool.GuardianSerializer
 
+config :scrivener_html,
+  routes_helper: SedpoolWeb.Router.Helpers
 
 import_config "#{Mix.env}.exs"

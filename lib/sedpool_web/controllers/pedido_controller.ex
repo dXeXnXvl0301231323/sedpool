@@ -3,11 +3,19 @@ defmodule SedpoolWeb.PedidoController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Pedido
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    pedidos = Account.list_pedidos()
-    render(conn, "index.html", pedidos: pedidos)
+#  def index(conn, _params) do
+#    pedidos = Account.list_pedidos()
+#    render(conn, "index.html", pedidos: pedidos)
+#  end
+  def index(conn, params) do
+    page = Pedido
+            |> Repo.paginate(params)
+    render(conn, "index.html", pedidos: page.entries, page: page)
   end
+
+
 
   def new(conn, _params) do
     changeset = Account.change_pedido(%Pedido{})

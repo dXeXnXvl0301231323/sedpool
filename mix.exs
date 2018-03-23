@@ -44,7 +44,9 @@ defp deps do
       {:cowboy, "~> 1.0"},
       {:comeonin, "~> 4.0"},
       {:argon2_elixir, "~> 1.2"},
-      {:guardian, "~> 1.0"}
+      {:guardian, "~> 1.0"},
+      {:scrivener_ecto, "~> 1.0"},
+      {:scrivener_html, "~> 1.1"}
     ]
   end
 
