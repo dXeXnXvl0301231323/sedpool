@@ -41,11 +41,23 @@
     <%= error_tag f, :tipocli_pedidos %>
   </div>
 
-  <div class="form-group">
+<!--  <div class="form-group">
     <%= label f, :condpag_pedidos, class: "control-label" %>
     <%= text_input f, :condpag_pedidos, class: "form-control" %>
     <%= error_tag f, :condpag_pedidos %>
   </div>
+-->
+  <div class="form-group">
+    <label>Cond.Pagamento
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <%= select(f, :condpag_pedidos, @condpagamento) %>
+    </div>
+    <%= error_tag f, :condpag_pedidos %>
+    </label>
+  </div>
+
+
 
   <div class="form-group">
     <%= label f, :tabela_pedidos, class: "control-label" %>
@@ -53,11 +65,22 @@
     <%= error_tag f, :tabela_pedidos %>
   </div>
 
-  <div class="form-group">
+<!--  <div class="form-group">
     <%= label f, :vend1_pedidos, class: "control-label" %>
     <%= text_input f, :vend1_pedidos, class: "form-control" %>
     <%= error_tag f, :vend1_pedidos %>
   </div>
+-->
+  <div class="form-group">
+    <label>Codigo do Vendedor
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <%= select(f, :vend1_pedidos, @cod_vendedor) %>
+    </div>
+    <%= error_tag f, :vend1_pedidos %>
+    </label>
+  </div>
+
 
   <div class="form-group">
     <%= label f, :mennota_pedidos, class: "control-label" %>

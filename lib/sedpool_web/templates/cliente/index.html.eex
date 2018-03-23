@@ -51,7 +51,8 @@
 </table>
 
 <center><span><%= link "Novo Cliente", to: cliente_path(@conn, :new) %></span> </center>
-
+</br>
+<%= pagination_links @page, view_style: :bootstrap_v4, next: "Avançar", previous: "Voltar" %>
 </div>
 </div>
 </div>

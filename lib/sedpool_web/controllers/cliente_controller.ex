@@ -3,11 +3,19 @@ defmodule SedpoolWeb.ClienteController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Cliente
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    clientes = Account.list_clientes()
-    render(conn, "index.html", clientes: clientes)
+#  def index(conn, _params) do
+#    clientes = Account.list_clientes()
+#    render(conn, "index.html", clientes: clientes)
+#  end
+  def index(conn, params) do
+    page = Cliente
+            |> Repo.paginate(params)
+    render(conn, "index.html", clientes: page.entries, page: page)
   end
+
+
 
   def new(conn, _params) do
     changeset = Account.change_cliente(%Cliente{})

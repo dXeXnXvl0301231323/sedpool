@@ -3,11 +3,18 @@ defmodule SedpoolWeb.TbprecoController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Tbpreco
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    tbprecos = Account.list_tbprecos()
-    render(conn, "index.html", tbprecos: tbprecos)
+#  def index(conn, _params) do
+#    tbprecos = Account.list_tbprecos()
+#    render(conn, "index.html", tbprecos: tbprecos)
+#  end
+  def index(conn, params) do
+    page = Tbpreco
+            |> Repo.paginate(params)
+    render(conn, "index.html", tbprecos: page.entries, page: page)
   end
+
 
   def new(conn, _params) do
     changeset = Account.change_tbpreco(%Tbpreco{})

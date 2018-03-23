@@ -3,11 +3,19 @@ defmodule SedpoolWeb.ItenspedidoController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Itenspedido
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    itenspedidos = Account.list_itenspedidos()
-    render(conn, "index.html", itenspedidos: itenspedidos)
+#  def index(conn, _params) do
+#    itenspedidos = Account.list_itenspedidos()
+#    render(conn, "index.html", itenspedidos: itenspedidos)
+#  end
+  def index(conn, params) do
+    page = Itenspedido
+            |> Repo.paginate(params)
+    render(conn, "index.html", itenspedidos: page.entries, page: page)
   end
+
+
 
   def new(conn, _params) do
     changeset = Account.change_itenspedido(%Itenspedido{})

@@ -32,7 +32,8 @@
 </table>
 
 <span><%= link "Novo Vendedor", to: vendedor_path(@conn, :new) %></span>
-
+</br>
+<%= pagination_links @page, view_style: :bootstrap_v4, next: "Avançar", previous: "Voltar" %>
 </div>
 </div>
 </div>

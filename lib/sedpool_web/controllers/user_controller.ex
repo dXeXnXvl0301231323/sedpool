@@ -7,9 +7,14 @@ defmodule SedpoolWeb.UserController do
   alias Sedpool.Repo
   import Ecto.Query
 
-  def index(conn, _params) do
-    users = Account.list_users()
-    render(conn, "index.html", users: users)
+#  def index(conn, _params) do
+#    users = Account.list_users()
+#    render(conn, "index.html", users: users)
+#  end
+  def index(conn, params) do
+    page = User
+            |> Repo.paginate(params)
+    render(conn, "index.html", users: page.entries, page: page)
   end
 
   def new(conn, _params) do

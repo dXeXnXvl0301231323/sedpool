@@ -3,10 +3,16 @@ defmodule SedpoolWeb.VendedorController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Vendedor
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    vendedores = Account.list_vendedores()
-    render(conn, "index.html", vendedores: vendedores)
+#  def index(conn, _params) do
+#    vendedores = Account.list_vendedores()
+#    render(conn, "index.html", vendedores: vendedores)
+#  end
+  def index(conn, params) do
+    page = Vendedor
+            |> Repo.paginate(params)
+    render(conn, "index.html", vendedores: page.entries, page: page)
   end
 
   def new(conn, _params) do

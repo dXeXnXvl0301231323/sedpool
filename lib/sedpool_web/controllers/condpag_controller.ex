@@ -3,11 +3,19 @@ defmodule SedpoolWeb.CondpagController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Condpag
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    condpagamentos = Account.list_condpagamentos()
-    render(conn, "index.html", condpagamentos: condpagamentos)
+#  def index(conn, _params) do
+#    condpagamentos = Account.list_condpagamentos()
+#    render(conn, "index.html", condpagamentos: condpagamentos)
+#  end
+  def index(conn, params) do
+    page = Condpag
+            |> Repo.paginate(params)
+    render(conn, "index.html", condpagamentos: page.entries, page: page)
   end
+
+
 
   def new(conn, _params) do
     changeset = Account.change_condpag(%Condpag{})

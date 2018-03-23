@@ -3,11 +3,18 @@ defmodule SedpoolWeb.ProdutoController do
 
   alias Sedpool.Account
   alias Sedpool.Account.Produto
+  alias Sedpool.Repo
 
-  def index(conn, _params) do
-    produtos = Account.list_produtos()
-    render(conn, "index.html", produtos: produtos)
+#  def index(conn, _params) do
+#    produtos = Account.list_produtos()
+#    render(conn, "index.html", produtos: produtos)
+#  end
+  def index(conn, params) do
+    page = Produto
+            |> Repo.paginate(params)
+    render(conn, "index.html", produtos: page.entries, page: page)
   end
+
 
   def new(conn, _params) do
     changeset = Account.change_produto(%Produto{})

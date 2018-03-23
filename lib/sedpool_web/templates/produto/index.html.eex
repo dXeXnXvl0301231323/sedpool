@@ -40,7 +40,7 @@
 </table>
 
 <span><%= link "Novo Produto", to: produto_path(@conn, :new) %></span>
-
+<%= pagination_links @page, view_style: :bootstrap_v4, next: "Avançar", previous: "Voltar" %>
 
 </div>
 </div>
