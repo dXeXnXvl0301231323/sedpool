@@ -33,7 +33,7 @@ defmodule SedpoolWeb.PedidoController do
         |> redirect(to: pedido_path(conn, :show, pedido))
       {:error, %Ecto.Changeset{} = changeset} ->
 #        render(conn, "new.html", changeset: changeset)
-     render(conn, "new.html", changeset: changeset, cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
+     render(conn, "new.html", changeset: changeset, condpagamento: Repo.all(from(c in Condpag, select: {c.descricao_condpagamento, c.codigo_condpagamento})), cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
     end
   end
 
@@ -46,7 +46,7 @@ defmodule SedpoolWeb.PedidoController do
     pedido = Account.get_pedido!(id)
     changeset = Account.change_pedido(pedido)
 #    render(conn, "edit.html", pedido: pedido, changeset: changeset)
-     render(conn, "new.html", changeset: changeset, cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
+     render(conn, "new.html", changeset: changeset, condpagamento: Repo.all(from(c in Condpag, select: {c.descricao_condpagamento, c.codigo_condpagamento})), cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
   end
 
   def update(conn, %{"id" => id, "pedido" => pedido_params}) do
@@ -59,8 +59,7 @@ defmodule SedpoolWeb.PedidoController do
         |> redirect(to: pedido_path(conn, :show, pedido))
       {:error, %Ecto.Changeset{} = changeset} ->
 #        render(conn, "edit.html", pedido: pedido, changeset: changeset)
-        render(conn, "new.html", changeset: changeset, cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
-
+     render(conn, "new.html", changeset: changeset, condpagamento: Repo.all(from(c in Condpag, select: {c.descricao_condpagamento, c.codigo_condpagamento})), cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
     end
   end
 
