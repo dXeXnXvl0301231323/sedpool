@@ -109,7 +109,7 @@
     <label>Emissao do Pedido
      <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
-    <%= text_input f, :emissao_pedidos, class: "form-control" %>
+    <%= text_input f, :emissao_pedidos, class: "form-control", id: "DataHoje" %>
     </div>
     <%= error_tag f, :emissao_pedidos %>
     </label>
@@ -125,6 +125,24 @@
     </label>
   </div>
 -->
+<script type="text/javascript">
+// Data De hoje na emissao do pedido
+ function Data()
+  {
+                data = new Date();
+                dia_semana = data.getDate();
+                mes = data.getMonth() + 1;
+		ano = data.getFullYear();
+		dataCompleta = dia_semana+'/'+mes+'/'+ano;
+
+                return dataCompleta;
+   }
+            
+   window.onload = function(){
+   document.getElementById("DataHoje").value = Data();
+   }
+</script>
+
   <div class="form-group">
     <%= submit "Salvar", class: "btn btn-primary" %>
   </div>
