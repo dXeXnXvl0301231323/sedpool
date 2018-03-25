@@ -30,7 +30,7 @@ defmodule Sedpool.Account.Pedido do
   @doc false
   def changeset(pedido, attrs) do
     pedido
-    |> cast(attrs, [:filial_pedidos, :num_pedidos, :tipo_pedidos, :cliente_pedidos, :lojacli_pedidos, :tipocli_pedidos, :condpag_pedidos, :tabela_pedidos, :vend1_pedidos, :mennota_pedidos, :emissao_pedidos, :nota_pedidos])
+    |> cast(attrs, [:filial_pedidos, :num_pedidos, :tipo_pedidos, :cliente_pedidos, :lojacli_pedidos, :tipocli_pedidos, :condpag_pedidos, :tabela_pedidos, :vend1_pedidos, :mennota_pedidos, :emissao_pedidos])
     |> validate_required([:filial_pedidos, :num_pedidos, :tipo_pedidos, :cliente_pedidos, :lojacli_pedidos, :tipocli_pedidos, :condpag_pedidos, :tabela_pedidos, :vend1_pedidos, :mennota_pedidos, :emissao_pedidos, :nota_pedidos])
   end
 end

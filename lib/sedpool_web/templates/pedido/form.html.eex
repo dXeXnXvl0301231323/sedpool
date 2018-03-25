@@ -115,7 +115,7 @@
     </label>
   </div>
 
-  <div class="form-group">
+<!--  <div class="form-group">
     <label>Nota do Pedido
      <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
@@ -124,7 +124,7 @@
     <%= error_tag f, :nota_pedidos %>
     </label>
   </div>
-
+-->
   <div class="form-group">
     <%= submit "Salvar", class: "btn btn-primary" %>
   </div>
