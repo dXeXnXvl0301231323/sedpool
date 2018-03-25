@@ -5,6 +5,7 @@ defmodule SedpoolWeb.PedidoController do
   alias Sedpool.Account.Pedido
   alias Sedpool.Account.Vendedor
   alias Sedpool.Account.Condpag
+  alias Sedpool.Account.Cliente
   alias Sedpool.Repo
   import Ecto.Query  
 
@@ -20,8 +21,18 @@ defmodule SedpoolWeb.PedidoController do
 
   def new(conn, _params) do
     changeset = Account.change_pedido(%Pedido{})
+    cod_cliente = Repo.all(from(c in Cliente, select: {c.fantasia_cliente, c.cod_cliente}))
+#    tipo_cliente = Repo.all(from(c in Cliente, select: {c.tipo_cliente, c.tipo_cliente}, where: c.cod_cliente == ^cod_cliente))
+    tipo_cliente = Repo.all(from(c in Cliente, select: {c.tipo_cliente, c.tipo_cliente}))
+    condpagamento = Repo.all(from(c in Condpag, select: {c.descricao_condpagamento, c.codigo_condpagamento}))
+    cod_vendedor = Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor}))
+
 #    render(conn, "new.html", changeset: changeset)
-     render(conn, "new.html", changeset: changeset, condpagamento: Repo.all(from(c in Condpag, select: {c.descricao_condpagamento, c.codigo_condpagamento})), cod_vendedor: Repo.all(from(c in Vendedor, select: {c.cod_vendedor, c.cod_vendedor})))
+     render(conn, "new.html", changeset: changeset, 
+      condpagamento: condpagamento,
+      cod_vendedor: cod_vendedor,
+      cod_cliente: cod_cliente,
+      tipo_cliente: tipo_cliente)
 
   end
 

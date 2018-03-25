@@ -6,47 +6,65 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :filial_pedidos, class: "control-label" %>
-    <%= text_input f, :filial_pedidos, class: "form-control" %>
+    <label>Filial
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <%= select(f, :filial_pedidos,["Matriz": "0101"] ) %>
+    </div>
     <%= error_tag f, :filial_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :num_pedidos, class: "control-label" %>
+    <label>Numero do Pedido
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :num_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :num_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :tipo_pedidos, class: "control-label" %>
+    <label>Tipo do Pedido
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :tipo_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :tipo_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :cliente_pedidos, class: "control-label" %>
-    <%= text_input f, :cliente_pedidos, class: "form-control" %>
+    <label>Cliente
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <%= select(f, :cliente_pedidos, @cod_cliente) %>
+    </div>
     <%= error_tag f, :cliente_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :lojacli_pedidos, class: "control-label" %>
+    <label>Loja do Cliente
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :lojacli_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :lojacli_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :tipocli_pedidos, class: "control-label" %>
-    <%= text_input f, :tipocli_pedidos, class: "form-control" %>
+    <label>Tipo do Cliente
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <%= select(f, :tipocli_pedidos, @tipo_cliente) %>
+    </div>
     <%= error_tag f, :tipocli_pedidos %>
+    </label>
   </div>
 
-<!--  <div class="form-group">
-    <%= label f, :condpag_pedidos, class: "control-label" %>
-    <%= text_input f, :condpag_pedidos, class: "form-control" %>
-    <%= error_tag f, :condpag_pedidos %>
-  </div>
--->
   <div class="form-group">
     <label>Cond.Pagamento
      <div class="input-group">
@@ -57,20 +75,16 @@
     </label>
   </div>
 
-
-
   <div class="form-group">
-    <%= label f, :tabela_pedidos, class: "control-label" %>
+    <label>Tabela do Pedido
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :tabela_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :tabela_pedidos %>
+    </label>
   </div>
 
-<!--  <div class="form-group">
-    <%= label f, :vend1_pedidos, class: "control-label" %>
-    <%= text_input f, :vend1_pedidos, class: "form-control" %>
-    <%= error_tag f, :vend1_pedidos %>
-  </div>
--->
   <div class="form-group">
     <label>Codigo do Vendedor
      <div class="input-group">
@@ -81,23 +95,34 @@
     </label>
   </div>
 
-
   <div class="form-group">
-    <%= label f, :mennota_pedidos, class: "control-label" %>
+    <label>Mensagem do Pedido
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :mennota_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :mennota_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :emissao_pedidos, class: "control-label" %>
+    <label>Emissao do Pedido
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :emissao_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :emissao_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
-    <%= label f, :nota_pedidos, class: "control-label" %>
+    <label>Nota do Pedido
+     <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <%= text_input f, :nota_pedidos, class: "form-control" %>
+    </div>
     <%= error_tag f, :nota_pedidos %>
+    </label>
   </div>
 
   <div class="form-group">
